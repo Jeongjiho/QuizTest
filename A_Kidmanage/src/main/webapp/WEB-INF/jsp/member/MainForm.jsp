@@ -137,7 +137,7 @@ footer {
 					<li><a href="#section1">Home</a></li>
 					<li><a href="#section2">Friends</a></li>
 					<li><a href="#section3">Family</a></li>
-					<li><a href="#section3">Photos</a></li>
+					<li><a href="#section3">Photo</a></li>
 				</ul></span>
 				<br>
 					<span class="input-group-btn">
