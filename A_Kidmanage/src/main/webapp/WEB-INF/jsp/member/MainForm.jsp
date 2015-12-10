@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Bootstrap</title>
+<title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -137,7 +137,7 @@ footer {
 					<li><a href="#section1">Home</a></li>
 					<li><a href="#section2">Friends</a></li>
 					<li><a href="#section3">Family</a></li>
-					<li><a href="#section3">Photos</a></li>
+					<li><a href="#section3">Photo</a></li>
 				</ul></span>
 				<br>
 					<span class="input-group-btn">
