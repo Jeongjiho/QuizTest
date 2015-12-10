@@ -8,9 +8,8 @@
 <html>
 <head>
   <meta charset='UTF-8'>
-  <title>회원-목록</title>
 </head>
-<body>
+<body align="center">
 <style type="text/css">
 div {
 margin: 30px;
@@ -33,9 +32,9 @@ width: : 500px;
             }
 
  </style>
-<p style="margin-left: 100px"><jsp:include page="/Header.jsp"/></p>
-
-<h1>회원 목록</h1>
+ <div style="position: relative;">
+<jsp:include page="/Header.jsp"/>
+</div>
 <table border='1'>
   <tr>
     <th align="center">사진</th>
@@ -49,7 +48,6 @@ width: : 500px;
 </c:forEach> 
 </table>
 
-<jsp:include page="/Copyright.jsp"/>
 
 </body>
 </html>    

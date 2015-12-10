@@ -120,7 +120,7 @@ public class MemberController {
       return "/member/MemberAuthError";
     } 
 
-    return "redirect:list.do";
+    return "redirect:../board/list.do";
   }
 
 
@@ -160,7 +160,7 @@ public class MemberController {
       return "/member/LoginFail";
     }
     session.setAttribute("loginUser", member);
-    return "redirect:../member/list.do";
+    return "redirect:../board/list.do";
   }
 
 
@@ -170,7 +170,7 @@ public class MemberController {
   @RequestMapping("logout")
   public String logout(HttpSession session)  {
     session.invalidate();
-    return "redirect:login.do";
+    return "redirect:../board/list.do";
   }
   
   
