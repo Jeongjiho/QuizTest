@@ -10,15 +10,15 @@
  
 <div class="card2">
 <c:if test="${not empty loginUser}">  
-    
 	<div class="pen-title2" >
 	<h3>${loginUser.id}님이 접속중 입니다.</h3>
 	</div>
-	<div class="footer"><a style="margin-right:10px" href="${pageContext.request.contextPath}/member/logout.do">로그아웃</a>
+	<div class="footer"><a style="margin-right:10px" href="${pageContext.request.contextPath}/kid/logout.do">로그아웃</a>
 	<a style="margin-right:40px" href="../member/detail.do?id=${loginUser.id}">내정보보기</a></div>
 </c:if>
+
 <c:if test="${empty loginUser}">
 <div class="footer">
-  <a style="font-size:20px; margin-right:30px"href="${pageContext.request.contextPath}/member/login.do">로그인</a></div>
+  <a style="font-size:15px; margin-right:30px"href="${pageContext.request.contextPath}/kid/login.do">LOGIN</a></div>
 </c:if>
 </div>
