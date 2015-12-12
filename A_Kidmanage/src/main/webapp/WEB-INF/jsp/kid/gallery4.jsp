@@ -5,7 +5,7 @@
 <html>
 
 <head>
-  <title>PhotoArtWork</title>
+  <title>나비반 앨범</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -568,14 +568,9 @@
         <div id="thumbs" class="navigation">
           <h1>나비반 앨범</h1>
           
-          <ul class="actions">
-              <li><input type="submit" class="special" value="Submit" /></li>
-              <li><input type="reset" class="alt" value="Reset" /></li>
-            </ul>
-            
           <ul class="thumbs noscript">
             <li>
-              <a class="thumb" href="../images/portfolio_one/1.jpg"><img src="../images/portfolio_one/1_thumb.jpg" alt="one" /></a>
+              <a class="thumb" href="../images/portfolio_one/1.jpg" ><img src="../images/portfolio_one/1_thumb.jpg" alt="one" /></a>
               <div class="caption">
                 <div class="image-title portfolio_one">&quot;Pier by the sea, Fowey, Cornwall, UK&quot;</div>
               </div>
@@ -611,6 +606,7 @@
               </div>
             </li>
             <li>
+          
               <a class="thumb" href="../images/portfolio_one/7.jpg"><img src="../images/portfolio_one/7_thumb.jpg" alt="seven" /></a>
               <div class="caption">
                 <div class="image-title portfolio_one">&quot;Abstract angles, dark and light&quot;</div>
@@ -696,6 +692,11 @@
             </li>
           </ul>
         </div>
+        <!-- 버튼 -->
+        <div style="margin-left: 30%;">
+              <input type="submit" class="special" value="Submit" /></div>
+            <div><input type="reset" class="alt" value="Reset" /></div>
+            <!-- 버튼 끝 -->
         <div id="controls" class="controls portfolio_one"></div>
         <div id="caption" class="caption-container"></div>
         <div style="clear: both;"></div>
@@ -715,28 +716,6 @@
       <img src="../images/rss.png" alt="rss" /></p>
     </footer>
     <!-- end footer -->
-    
-    
-    <!-- Standard button -->
-<button type="button" class="btn btn-default">Default</button>
-
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary">Primary</button>
-
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-success">Success</button>
-
-<!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-info">Info</button>
-
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">Warning</button>
-
-<!-- Indicates a dangerous or potentially negative action -->
-<button type="button" class="btn btn-danger">Danger</button>
-
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-<button type="button" class="btn btn-link">Link</button>
     
     
     

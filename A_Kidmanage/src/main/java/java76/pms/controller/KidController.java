@@ -41,10 +41,25 @@ public class KidController {
     return "kid/IndexForm";
   }
 
-  @RequestMapping(value="gallery", method=RequestMethod.GET)
-  public String gallery() {
+  @RequestMapping(value="gallery1", method=RequestMethod.GET)
+  public String gallery1() {
     
-    return "kid/gallery";
+    return "kid/gallery1";
+  }
+  
+  
+  @RequestMapping(value="gallery2", method=RequestMethod.GET)
+  public String gallery2() {
+    
+    return "kid/gallery2";
+  }
+  
+  
+  
+  @RequestMapping(value="gallery3", method=RequestMethod.GET)
+  public String gallery3() {
+    
+    return "kid/gallery3";
   }
   
   

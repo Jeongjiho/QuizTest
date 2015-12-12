@@ -629,9 +629,9 @@ ul#nav ul {
 						</ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
-							<li><a href="gallery.do">나비반</a></li>
-							<li><a href="portfolio_two.html">호랑이반</a></li>
-							<li><a href="portfolio_two.html">남자반</a></li>
+							<li><a href="gallery1.do">나비반</a></li>
+							<li><a href="gallery2.do">호랑이반</a></li>
+							<li><a href="gallery3.do">남자반</a></li>
 						</ul></li>
 					<li style="font-size: 12px;"><a href="blog.html">식단표</a></li>
 				</ul>
