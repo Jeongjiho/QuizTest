@@ -131,7 +131,7 @@
 <script>
     function deleteBoard() {
       var password = document.getElementById('inputPassword').value;
-      var href = document.getElementById('aDelete').href + "&password="
+      var href = document.getElementById('aDelete').href + "&pwd="
           + password;
       document.getElementById('aDelete').href = href;
     }

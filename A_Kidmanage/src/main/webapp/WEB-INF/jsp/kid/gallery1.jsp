@@ -555,6 +555,10 @@ function save_it() {
 
 </head>
 
+  <div align="right" style="font-size: 12px; margin-right:15%; margin-top:5%">
+<jsp:include page="/Header.jsp" />
+</div> 
+
 <body>
 
 	<div id="main">
@@ -564,7 +568,7 @@ function save_it() {
 			<div id="logo"
 				style="margin-bottom: 0%; margin-top: 2%; font-size: 11px;">
 				<h1>
-					<a href="login.do">다인이</a>유치원
+					<a href="main.do">다인이</a>유치원
 				</h1>
 				<h1 style="margin-top: -5%; margin-left: -10%; font-size: 25px;">
 				<a href="gallery1.do">나비</a>반 앨범
@@ -573,10 +577,10 @@ function save_it() {
 			<nav>
 				<ul class="sf-menu" id="nav" style="margin-bottom: 5%;">
 					<li class="selected" style="font-size: 12px;"><a
-						href="index.html">공지사항</a></li>
+						href="../board/list.do">공지사항</a></li>
 					<li style="font-size: 12px;"><a href="#">우리 아이들</a>
 						<ul>
-							<li style="font-size: 12px;"><a href="portfolio_one.html">나비반</a></li>
+							<li style="font-size: 12px;"><a href="../kidManage/list.do">나비반</a></li>
 							<li style="font-size: 12px;"><a href="portfolio_two.html">호랑이반</a></li>
 							<li style="font-size: 12px;"><a href="portfolio_two.html">남자반</a></li>
 						</ul></li>
@@ -586,7 +590,6 @@ function save_it() {
 							<li><a href="gallery2.do">호랑이반</a></li>
 							<li><a href="gallery3.do">남자반</a></li>
 						</ul></li>
-					<li style="font-size: 12px;"><a href="blog.html">식단표</a></li>
 				</ul>
 			</nav>
 		</header>

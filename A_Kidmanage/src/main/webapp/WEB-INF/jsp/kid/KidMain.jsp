@@ -627,7 +627,7 @@ ul#nav ul {
 
 </head>
 
-  <div align="right" style="margin-right:15%; margin-top:5%">
+  <div align="right" style="font-size: 12px; margin-right:15%; margin-top:5%">
 <jsp:include page="/Header.jsp" />
 </div> 
 
@@ -638,7 +638,7 @@ ul#nav ul {
 		<header>
 			<div id="logo" style="margin-bottom: 5%; margin-top: -7%; font-size: 11px;">
 				<h1>
-					<a href="login.do">다인이</a>유치원
+					<a href="main.do">다인이</a>유치원
 				</h1>
 			</div>
 			<nav>

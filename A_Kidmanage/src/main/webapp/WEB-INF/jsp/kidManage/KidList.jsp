@@ -32,6 +32,13 @@
 <meta charset='UTF-8'>
 <title></title>
 </head>
+
+  <div align="right" style="font-size: 12px; margin-right:15%; margin-top:5%">
+<jsp:include page="/Header.jsp" />
+</div> 
+
+
+
 <body>
 	<div id="main">
 		<!-- begin header -->
@@ -39,7 +46,7 @@
 			<div id="logo"
 				style="margin-bottom: 0%; margin-top: 2%; font-size: 11px;">
 				<h1>
-					<a href="login.do">다인이</a>유치원
+					<a href="../kid/main.do">다인이</a>유치원
 				</h1>
 			</div>
 			<nav style="position: relative; z-index: 1;">
@@ -54,11 +61,10 @@
 						</ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
-							<li><a href="gallery.do">나비반</a></li>
+							<li><a href="../kid/gallery1.do">나비반</a></li>
 							<li><a href="portfolio_two.html">호랑이반</a></li>
 							<li><a href="portfolio_two.html">남자반</a></li>
 						</ul></li>
-					<li style="font-size: 12px;"><a href="blog.html">식단표</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -144,6 +150,21 @@
 
 
 	</div>
+	
+	
+	
+	   <footer>
+      <p style="font-size: 15px;">
+        Copyright &copy; 2015 다인이유치원. All Rights Reserved. <a
+          href="http://www.css3templates.co.uk">Design from
+          갓지현(feat. 지호)</a>
+      </p>
+      <p>
+        <img src="../images/twitter.png" alt="twitter" />&nbsp;<img
+          src="../images/facebook.png" alt="facebook" />&nbsp;<img
+          src="../images/rss.png" alt="rss" />
+      </p>
+    </footer>
 </body>
 
 <script>
