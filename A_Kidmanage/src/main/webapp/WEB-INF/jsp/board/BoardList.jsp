@@ -71,11 +71,10 @@
 				<td id="open" class="plusTd button"></td>
 			</tr>
 			<tr class="headingTr">
-				<td>번호</td>
+			<td>번호</td>
 				<td>제목</td>
 				<td>작성자</td>
-				<td>등록일</td>
-				<td></td>
+				<td>등록날짜</td>
 			</tr>
 
 			<c:forEach var="board" items="${boards}">

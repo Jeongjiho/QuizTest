@@ -1,12 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-
+<%@page import="java.util.List"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 
 <head>
 <title>PhotoArtWork</title>
+
+<link
+  href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900'
+  rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../css/board.css" type='text/css'>
+
+<title>다인이 유치원</title>
+<meta name="description" content="website description" />
+<meta name="keywords" content="website keywords, website keywords" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<!-- stylesheets -->
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../css/portfolio_one.css" rel="stylesheet" type="text/css" />
+<link href="../css/light.css" rel="stylesheet" type="text/css" />
+<!-- we only want the thunbnails to display when javascript is disabled -->
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+  document.write('<style>.noscript { display: none; }</style>');
+</script>
+<!-- modernizr enables HTML5 elements and feature detects -->
+<script type="text/javascript" src="../js/modernizr-1.5.min.js"></script>
+
+
 <meta name="description" content="website description" />
 <meta name="keywords" content="website keywords, website keywords" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -634,12 +657,49 @@ ul#nav ul {
 							<li><a href="gallery2.do" enctype="multipart/form-data">호랑이반</a></li>
 							<li><a href="gallery3.do" enctype="multipart/form-data">남자반</a></li>
 						</ul></li>
-					<li style="font-size: 12px;"><a href="blog.html">식단표</a></li>
 				</ul>
 			</nav>
 		</header>
 		<!-- end header -->
+		
+		<div style="border-top: 2px solid gray;"></div>
+		
+		<br><br><br>
+		<h1 style="font-size: 20px;">✘ 공지사항 <a href="../board/list.do" style="margin-left: 40%; 
+		margin-top: -15%; font-size: 14px;">+ more</a></h1>
+	 <table class="flatTable" style="width:0%;">
+      <tr class="headingTr">
+        <td style="font-size: 15px;">번호</td>
+        <td style="font-size: 15px;">제목</td>
+        <td style="font-size: 15px;">작성자</td>
+     </tr>
+      <c:forEach var="board" items="${boards}">
+        <tr>
+          <td>${board.no}</td>
+          <td>${board.title}</td>
+          <td>${board.writer}</td>
+        </tr>
+      </c:forEach>
+      </table>
+      <br><br><br><br><br><br>
+      
+      
+      
+      <h1 style="font-size: 20px;">✘ 아가들 앨범 <a href="gallery1.do" style="margin-left: 70%; 
+    margin-top: -15%; font-size: 14px;">+ more</a></h1>
+       
+      <hr width="90%" color="black" size="20" noshade="noshade">
+      
+      <c:forEach var="album" items="${albums}">
+            <img src="../file/${album.photo}" style="width: 150px; height: 150px; margin-left: 5%;"/>
+      </c:forEach>
+     
+     
+     <br><br><br>
+     
+     <div style="border-top: 2px solid gray;"></div>
 
+  </div>
 
 		<!-- begin footer -->
 		<footer>

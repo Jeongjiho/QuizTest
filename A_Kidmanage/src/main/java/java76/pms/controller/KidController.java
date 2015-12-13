@@ -1,6 +1,7 @@
 package java76.pms.controller;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -11,10 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java76.pms.dao.AlbumDao;
+import java76.pms.dao.BoardDao;
 import java76.pms.domain.Album;
+import java76.pms.domain.Board;
 import java76.pms.util.MultipartHelper;
 import net.coobird.thumbnailator.Thumbnails;
 
@@ -23,18 +27,56 @@ import net.coobird.thumbnailator.Thumbnails;
 public class KidController { 
   public static final String SAVED_DIR = "/file";
   @Autowired AlbumDao albumDao;
+  @Autowired BoardDao boardDao;
   @Autowired ServletContext servletContext;
 
   //---------------------------------------------------------
   /* 로그인 처리 부분*/
   @RequestMapping(value="login", method=RequestMethod.POST)
-  public String kidMain()  {
+  public String kidMain( @RequestParam(defaultValue="1") int pageNo,
+      @RequestParam(defaultValue="10")int pageSize,
+      @RequestParam(defaultValue="no")String keyword,
+      @RequestParam(defaultValue="desc")String align,
+      HttpServletRequest request) throws Exception {
+
+    
+
+    HashMap<String,Object> paramMap = new HashMap<>();
+    paramMap.put("startIndex", (pageNo - 1) * pageSize);
+    paramMap.put("length", pageSize);
+    paramMap.put("keyword", keyword);
+    paramMap.put("align", align);
+  List<Board> boards = boardDao.selectList(paramMap);
+  
+  request.setAttribute("boards", boards);
+
+  System.out.println("Login 처리 부분1");
+  
     return "kid/KidMain";
   }
 
 
   @RequestMapping("main")
-  public String kidMain1()  {
+  public String kidMain1( @RequestParam(defaultValue="1") int pageNo,
+      @RequestParam(defaultValue="10")int pageSize,
+      @RequestParam(defaultValue="no")String keyword,
+      @RequestParam(defaultValue="desc")String align,
+      HttpServletRequest request) throws Exception {
+    HashMap<String,Object> paramMap = new HashMap<>();
+    paramMap.put("startIndex", (pageNo - 1) * pageSize);
+    paramMap.put("length", pageSize);
+    paramMap.put("keyword", keyword);
+    paramMap.put("align", align);
+  List<Board> boards = boardDao.selectList(paramMap);
+  
+  request.setAttribute("boards", boards);
+  
+  
+  List<Album> albums = albumDao.selectList();
+
+  request.setAttribute("albums", albums);
+
+  System.out.println("Login 처리 부분2");
     return "kid/KidMain";
   }
 

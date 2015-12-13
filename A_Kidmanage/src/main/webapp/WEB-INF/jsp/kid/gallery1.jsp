@@ -602,7 +602,6 @@ function save_it() {
           <c:forEach var="album" items="${albums}">
             <li><a class="thumb" href="../file/s-${album.photo}" onclick="">
             <img src="../file/${album.photo}" alt="one" style="width: 75px; height: 75px;"/></a>
-            <input type="checkbox" name="frm_data" id="frm_data" value="${album.ano}" style="margin-left: 43%;"/>
               <div class="caption">
                 <div class="image-title portfolio_two">&quot;${album.content}&quot;</div>
               </div></li></c:forEach>
@@ -626,12 +625,12 @@ function save_it() {
 		<p></p>
 		<div style="margin-left: 76%; margin-top:-1%;">
 		<!-- 새로 추가하기 액션 -->
-		<form action="albumadd.do" method="get" enctype="multipart/form-data" style="margin-left: -60%;">
+		<form action="albumadd.do" method="get" enctype="multipart/form-data" style="margin-left: -10%;">
 			<input type="submit" class="special" value="새로 추가하기" /></form>
 			
-		<!-- 수정하기 액션 -->	 
+		<!-- 수정하기 액션 
 			<form action="delete.do" style="margin-left: -10%; margin-top: -13%;" method="POst" enctype="multipart/form-data">
-			<input type="button" id="save_it" value="삭제하기" onclick="save_it()" /></form>
+			<input type="button" id="save_it" value="삭제하기" onclick="save_it()" /></form>-->   
 			
 		</div>
 		<!-- end content -->
