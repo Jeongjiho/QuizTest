@@ -31,7 +31,7 @@
 		where m_uid=#{m_uid}
 	</update>
 	
-	<select id="selectOne" resultType="member" parameterType="string">
+	<select id="selectOne" resultType="member" parameterType="int">
     select
 	  m_uid,
 	  email,

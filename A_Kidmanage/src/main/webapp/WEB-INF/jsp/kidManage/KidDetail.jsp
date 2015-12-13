@@ -31,6 +31,9 @@
 <meta charset='UTF-8'>
 <title></title>
 </head>
+  <div align="right" style="font-size: 12px; margin-right:15%; margin-top:5%">
+<jsp:include page="/Header.jsp" />
+</div> 
 <body>
 	<div id="main">
 		<!-- begin header -->
@@ -38,7 +41,7 @@
 			<div id="logo"
 				style="margin-bottom: 0%; margin-top: 2%; font-size: 11px;">
 				<h1>
-					<a href="login.do">다인이</a>유치원
+					<a href="../kid/main.do">다인이</a>유치원
 				</h1>
 			</div>
 			<nav style="position: relative; z-index: 1;">
@@ -46,18 +49,17 @@
 					<li class="selected" style="font-size: 12px;"><a
 						href="../board/list.do">공지사항</a></li>
 					<li style="font-size: 12px;"><a href="#">우리 아이들</a>
-						<ul>
-							<li style="font-size: 12px;"><a href="../kidManage/list.do">나비반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">호랑이반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">남자반</a></li>
-						</ul></li>
+            <ul>
+              <li style="font-size: 12px;"><a href="../kidManage/c1List.do">나비반</a></li>
+              <li style="font-size: 12px;"><a href="../kidManage/c2List.do">호랑이반</a></li>
+              <li style="font-size: 12px;"><a href="../kidManage/c3List.do">남자반</a></li>
+            </ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
 							<li><a href="gallery.do">나비반</a></li>
 							<li><a href="portfolio_two.html">호랑이반</a></li>
 							<li><a href="portfolio_two.html">남자반</a></li>
 						</ul></li>
-					<li style="font-size: 12px;"><a href="blog.html">식단표</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -105,16 +107,20 @@
 							name='photo' value='${kidManage.photo}'></td>
 					</tr>
 				</table>
-				<p>
-					<button name='update' type='submit' class='button1'>변경</button>
-					<a id='aDelete' href='delete.do?no=${kidManage.no}' class='button2'
-						onclick='deleteBoard()'>삭제</a>
-				</p>
+         <br>
+        <c:if test="${loginUser.type == 'teacher'}">
+          <p style="margin-left: 100px;">
+            <a style="margin-left: 30px; font-size: medium;"
+              onclick="Update()">변경</a> <a
+              style="margin-left: 30px; font-size: medium;" id='aDelete'
+              href='delete.do?no=${kidManage.no}'>삭제</a>
+          </p>
+        </c:if>
 			</form>
 		</c:if>
-		<c:if test="${empty board}">
-			<p>해당 번호의 게시물을 찾을 수 없습니다.</p>
-		</c:if>
+    <c:if test="${empty kidManage}">
+      <p>해당 아이를 찾을 수 없습니다.</p>
+    </c:if>
 	</div>
 </body>
 
@@ -134,11 +140,9 @@
 </script>
 
 <script>
-    function deleteBoard() {
-      var password = document.getElementById('inputPassword').value;
-      var href = document.getElementById('aDelete').href + "&password="
-          + password;
-      document.getElementById('aDelete').href = href;
-    }
+    
+    function Update() {
+        $("#form1").submit();
+      }
   </script>
 </html>

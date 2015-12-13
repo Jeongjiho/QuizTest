@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 
 <!DOCTYPE HTML>
@@ -9,7 +9,7 @@
 <title>다인이 유치원</title>
 <!-- join -->
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'
-  rel='stylesheet' type='text/css'>
+	rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" href="../css/joinReset.css">
 <!-- CSS reset -->
@@ -17,7 +17,7 @@
 <!-- Gem style -->
 <script src="../js/modernizr.js"></script>
 <script
-  src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="../js/joinMain.js"></script>
 <!-- Modernizr -->
 <!-- /join -->
@@ -41,13 +41,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=2" />
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script
-  src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <link rel="stylesheet"
-  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script
-  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
-  src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
 
@@ -55,572 +55,631 @@
 <style type="text/css">
 /* light theme */
 body {
-  background: #EEE url(../images/light.png);
-  color: #444;
+	background: #EEE url(../images/light.png);
+	color: #444;
 }
 
 h2, h6 {
-  color: #07E5F9;
+	color: #07E5F9;
 }
 
 #site_content {
-  background: #FEFEFC;
+	background: #FEFEFC;
 }
 
 #left_content ul li {
-  background: url(../images/light_bullet.png) no-repeat left center;
+	background: url(../images/light_bullet.png) no-repeat left center;
 }
 
 footer, footer a:hover {
-  color: #111;
-  text-shadow: 1px 1px #FFF;
+	color: #111;
+	text-shadow: 1px 1px #FFF;
 }
 
 #slideshow-caption, #slideshow-caption p {
-  color: #FFF;
-  background: #151515;
+	color: #FFF;
+	background: #151515;
 }
 
 .form_settings .submit {
-  background: #444;
-  text-shadow: 1px 1px #000;
-  color: #FFF;
+	background: #444;
+	text-shadow: 1px 1px #000;
+	color: #FFF;
 }
 
 .form_settings input, .form_settings textarea, .form_settings select {
-  border-color: #777;
+	border-color: #777;
 }
 
 #blog_container h4.select {
-  background: url(../images/light_blog.png) no-repeat right top;
+	background: url(../images/light_blog.png) no-repeat right top;
 }
 
 .blog h3, div.image-title.portfolio_one, div.controls.portfolio_one a:hover
-  {
-  color: #111;
+	{
+	color: #111;
 }
 
 div.image-title.portfolio_two, div.controls.portfolio_two a {
-  color: #FFF;
+	color: #FFF;
 }
 
 #blog_text {
-  background: #F1F1E7;
-  text-shadow: 1px 1px #FFF;
-  color: #555;
+	background: #F1F1E7;
+	text-shadow: 1px 1px #FFF;
+	color: #555;
 }
 
 ul#nav li a {
-  text-shadow: 1px 1px #FFF;
-  color: #000;
+	text-shadow: 1px 1px #FFF;
+	color: #000;
 }
 
 ul#nav ul {
-  background: #DDD;
+	background: #DDD;
 }
 
 a, a:hover, footer a, ul#nav li.selected a, ul#nav li a:hover, ul#nav ul li a:hover,
-  ul#nav ul li a:focus, ul#nav li.selected ul a:hover, div.controls.portfolio_one a,
-  div.controls.portfolio_two a:hover {
-  color: #F6007F;
+	ul#nav ul li a:focus, ul#nav li.selected ul a:hover, div.controls.portfolio_one a,
+	div.controls.portfolio_two a:hover {
+	color: #F6007F;
 }
 
 ul.thumbs li.selected a.thumb {
-  background: #F6007F;
+	background: #F6007F;
 }
 
 div.pagination a, div.pagination span.current, div.pagination span.ellipsis
-  {
-  background: #444;
-  color: #AAA;
+	{
+	background: #444;
+	color: #AAA;
 }
 
 div.pagination a:hover {
-  background: #EEE;
-  color: #111;
+	background: #EEE;
+	color: #111;
 }
 
 div.pagination span.current {
-  background: #444;
-  color: #FFF;
+	background: #444;
+	color: #FFF;
 }
 
 h1, h3, h4, h5, a:hover, #logo h1, #logo h1 a:hover, .form_settings input,
-  .form_settings textarea, #blog_container h4, .blog h2, ul#nav li.selected ul a
-  {
-  color: #555;
+	.form_settings textarea, #blog_container h4, .blog h2, ul#nav li.selected ul a
+	{
+	color: #555;
 }
 
 div.navigation a.prev {
-  background: url(../images/prev_arrow.gif) no-repeat left;
+	background: url(../images/prev_arrow.gif) no-repeat left;
 }
 
 div.navigation a.next {
-  background: url(../images/next_arrow.gif) no-repeat right;
+	background: url(../images/next_arrow.gif) no-repeat right;
 }
 
 div.pagination a, div.pagination span.current, div.pagination span.ellipsis
-  {
-  background-color: #BBB;
-  color: #FFF;
+	{
+	background-color: #BBB;
+	color: #FFF;
 }
 
 div.pagination a:hover {
-  background-color: #BBB;
-  color: #000;
+	background-color: #BBB;
+	color: #000;
 }
 
 div.pagination span.current {
-  background-color: #888;
-  color: #FFF;
+	background-color: #888;
+	color: #FFF;
 }
 
 @font-face {
-  font-family: Yanone Kaffeesatz;
-  src: url('../fonts/YanoneKaffeesatz-Regular.eot');
-  src: local(Yanone Kaffeesatz),
-    url('../fonts/YanoneKaffeesatz-Regular.ttf');
+	font-family: Yanone Kaffeesatz;
+	src: url('../fonts/YanoneKaffeesatz-Regular.eot');
+	src: local(Yanone Kaffeesatz),
+		url('../fonts/YanoneKaffeesatz-Regular.ttf');
 }
 
 @font-face {
-  font-family: News Cycle;
-  src: url('../fonts/NewsCycle-Regular.eot');
-  src: local(News Cycle), url('../fonts/NewsCycle-Regular.ttf');
+	font-family: News Cycle;
+	src: url('../fonts/NewsCycle-Regular.eot');
+	src: local(News Cycle), url('../fonts/NewsCycle-Regular.ttf');
 }
 
 html {
-  height: 100%;
+	height: 100%;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /* tell the browser to render HTML 5 elements as block */
 article, aside, figure, footer, header, hgroup, nav, section {
-  display: block;
+	display: block;
 }
 
 body {
-  font: normal .80em arial, sans-serif;
+	font: normal .80em arial, sans-serif;
 }
 
 p {
-  padding: 0 0 25px 0;
-  line-height: 1.7em;
+	padding: 0 0 25px 0;
+	line-height: 1.7em;
 }
 
 img {
-  border: 0;
+	border: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font: normal 200% 'Yanone Kaffeesatz', arial, sans-serif;
-  margin: 0 0 15px 0;
-  padding: 0 0 5px 0;
+	font: normal 200% 'Yanone Kaffeesatz', arial, sans-serif;
+	margin: 0 0 15px 0;
+	padding: 0 0 5px 0;
 }
 
 h2 {
-  font: normal 170% 'Yanone Kaffeesatz', arial, sans-serif;
-  margin: 0;
-  padding: 0 0 8px 0;
+	font: normal 170% 'Yanone Kaffeesatz', arial, sans-serif;
+	margin: 0;
+	padding: 0 0 8px 0;
 }
 
 h3 {
-  font: normal 150% arial, sans-serif;
+	font: normal 150% arial, sans-serif;
 }
 
 h4, h5, h6 {
-  margin: 0;
-  padding: 0 0 5px 0;
-  font: normal 110% arial, sans-serif;
-  line-height: 1.5em;
+	margin: 0;
+	padding: 0 0 5px 0;
+	font: normal 110% arial, sans-serif;
+	line-height: 1.5em;
 }
 
 h5, h6 {
-  font: italic 95% arial, sans-serif;
-  padding-bottom: 15px;
+	font: italic 95% arial, sans-serif;
+	padding-bottom: 15px;
 }
 
 a, a:hover {
-  outline: none;
-  text-decoration: none;
+	outline: none;
+	text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 ul {
-  margin: 2px 0 22px 17px;
+	margin: 2px 0 22px 17px;
 }
 
 ul li {
-  list-style-type: circle;
-  margin: 0 0 0 0;
-  padding: 0 0 4px 5px;
+	list-style-type: circle;
+	margin: 0 0 0 0;
+	padding: 0 0 4px 5px;
 }
 
 ol {
-  margin: 8px 0 22px 20px;
+	margin: 8px 0 22px 20px;
 }
 
 ol li {
-  margin: 0 0 11px 0;
+	margin: 0 0 11px 0;
 }
 
 #main, #header, #logo, #menubar, #site_content, #footer {
-  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #main {
-  width: 950px;
-  margin: 20px auto;
+	width: 950px;
+	margin: 20px auto;
 }
 
 header {
-  width: 950px;
-  height: 105px;
+	width: 950px;
+	height: 105px;
 }
 
 #logo {
-  width: 250px;
-  float: left;
-  height: 100px;
-  background: transparent;
-  padding: 0 0 10px 10px;
+	width: 250px;
+	float: left;
+	height: 100px;
+	background: transparent;
+	padding: 0 0 10px 10px;
 }
 
 #logo h1 {
-  font: normal 500% 'Yanone Kaffeesatz', arial, sans-serif;
-  padding: 45px 0 0 17px;
-  margin-top: 12%;
+	font: normal 500% 'Yanone Kaffeesatz', arial, sans-serif;
+	padding: 45px 0 0 17px;
+	margin-top: 12%;
 }
 
 #logo h1 a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 #site_content {
-  width: 950px;
-  overflow: hidden;
-  margin: 4px auto 0 auto;
-  padding: 0;
+	width: 950px;
+	overflow: hidden;
+	margin: 4px auto 0 auto;
+	padding: 0;
 }
 
 #left_content {
-  float: left;
-  text-align: justify;
-  width: 444px;
-  padding: 20px 0 5px 25px;
-  margin: 0;
+	float: left;
+	text-align: justify;
+	width: 444px;
+	padding: 20px 0 5px 25px;
+	margin: 0;
 }
 
 #left_content ul {
-  margin: 2px 0 22px 0px;
+	margin: 2px 0 22px 0px;
 }
 
 #left_content ul li {
-  list-style-type: none;
-  margin: 0 0 0 0;
-  padding: 2px 0 2px 28px;
-  line-height: 1.5em;
+	list-style-type: none;
+	margin: 0 0 0 0;
+	padding: 2px 0 2px 28px;
+	line-height: 1.5em;
 }
 
 #right_content {
-  float: right;
-  width: 450px;
-  padding: 0;
-  min-height: 450px;
+	float: right;
+	width: 450px;
+	padding: 0;
+	min-height: 450px;
 }
 
 #right_content img {
-  float: left;
+	float: left;
 }
 
 footer {
-  width: 930px;
-  font: normal 100% arial, sans-serif;
-  padding: 50px 20px 5px 0;
-  text-align: right;
-  background: transparent;
+	width: 930px;
+	font: normal 100% arial, sans-serif;
+	padding: 50px 20px 5px 0;
+	text-align: right;
+	background: transparent;
 }
 
 footer p {
-  padding: 0 0 10px 0;
+	padding: 0 0 10px 0;
 }
 
 footer a, footer a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 /* styling for the slideshow on the homepage */
 ul.slideshow {
-  list-style: none;
-  width: 950px;
-  height: 450px;
-  overflow: hidden;
-  position: relative;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	width: 950px;
+	height: 450px;
+	overflow: hidden;
+	position: relative;
+	margin: 0;
+	padding: 0;
 }
 
 ul.slideshow li {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  right: 0;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	right: 0;
 }
 
 ul.slideshow li.show {
-  z-index: 500;
+	z-index: 500;
 }
 
 ul img {
-  border: none;
+	border: none;
 }
 
 #slideshow-caption {
-  width: 950px;
-  height: 90px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 500;
+	width: 950px;
+	height: 90px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 500;
 }
 
 #slideshow-caption .slideshow-caption-container {
-  padding: 20px 25px 0 25px;
-  z-index: 1000;
+	padding: 20px 25px 0 25px;
+	z-index: 1000;
 }
 
 #slideshow-caption p {
-  padding: 0;
-  font: normal 130% arial, sans-serif;
+	padding: 0;
+	font: normal 130% arial, sans-serif;
 }
 
 /* form styling */
 .form_settings {
-  margin: 0;
+	margin: 0;
 }
 
 .form_settings p {
-  padding: 0 0 10px 0;
+	padding: 0 0 10px 0;
 }
 
 .form_settings span {
-  padding: 5px 0;
-  float: left;
-  width: 170px;
-  text-align: left;
+	padding: 5px 0;
+	float: left;
+	width: 170px;
+	text-align: left;
 }
 
 .form_settings input, .form_settings textarea {
-  padding: 4px;
-  width: 252px;
-  font: 100% 'trebuchet ms', arial, sans-serif;
-  border: 0;
-  border-bottom: 1px solid;
-  background: transparent;
+	padding: 4px;
+	width: 252px;
+	font: 100% 'trebuchet ms', arial, sans-serif;
+	border: 0;
+	border-bottom: 1px solid;
+	background: transparent;
 }
 
 .form_settings .submit {
-  font: 170% 'Yanone Kaffeesatz', arial, sans-serif;
-  border: 0;
-  width: 100px;
-  margin: 0 0 0 162px;
-  height: 33px;
-  padding: 2px 0 3px 0;
-  cursor: pointer;
-  border-radius: 6px 6px 6px 6px;
-  -webkit-border-radius: 6px 6px 6px 6px;
-  -moz-border-radius: 6px 6px 6px 6px;
+	font: 170% 'Yanone Kaffeesatz', arial, sans-serif;
+	border: 0;
+	width: 100px;
+	margin: 0 0 0 162px;
+	height: 33px;
+	padding: 2px 0 3px 0;
+	cursor: pointer;
+	border-radius: 6px 6px 6px 6px;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
 }
 
 .form_settings textarea, .form_settings select {
-  font: 100% 'trebuchet ms', arial, sans-serif;
-  border: 1px solid;
-  border-radius: 6px 6px 6px 6px;
-  -webkit-border-radius: 6px 6px 6px 6px;
-  -moz-border-radius: 6px 6px 6px 6px;
-  width: 250px;
-  overflow: auto;
+	font: 100% 'trebuchet ms', arial, sans-serif;
+	border: 1px solid;
+	border-radius: 6px 6px 6px 6px;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	width: 250px;
+	overflow: auto;
 }
 
 .form_settings select {
-  width: 304px;
+	width: 304px;
 }
 
 .form_settings .checkbox {
-  margin: 4px 0;
-  padding: 0;
-  width: 14px;
-  border: 0;
-  background: none;
+	margin: 4px 0;
+	padding: 0;
+	width: 14px;
+	border: 0;
+	background: none;
 }
 
 /* styling for the blog page */
 #blog_container h4 {
-  font: normal 200% 'Yanone Kaffeesatz', arial, sans-serif;
-  margin: 0 0 15px 0;
-  padding: 5px 0;
+	font: normal 200% 'Yanone Kaffeesatz', arial, sans-serif;
+	margin: 0 0 15px 0;
+	padding: 5px 0;
 }
 
 #blog_container h4.select {
-  width: 475px;
+	width: 475px;
 }
 
 .blog {
-  background: url(../images/calendar.png) no-repeat;
-  width: 54px;
-  height: 46px;
-  float: left;
-  margin: 0 15px 0 0;
+	background: url(../images/calendar.png) no-repeat;
+	width: 54px;
+	height: 46px;
+	float: left;
+	margin: 0 15px 0 0;
 }
 
 .blog h2 {
-  font: bold 90% arial, sans-serif;
-  text-shadow: none;
-  text-align: center;
-  margin: 0;
-  padding: 4px 0 0 0;
+	font: bold 90% arial, sans-serif;
+	text-shadow: none;
+	text-align: center;
+	margin: 0;
+	padding: 4px 0 0 0;
 }
 
 .blog h3 {
-  font: 140% arial, sans-serif;
-  text-shadow: none;
-  margin: 0;
-  text-align: center;
-  padding: -10px 0 0 0;
+	font: 140% arial, sans-serif;
+	text-shadow: none;
+	margin: 0;
+	text-align: center;
+	padding: -10px 0 0 0;
 }
 
 #blog_text {
-  padding: 20px;
-  overflow: auto;
-  height: 100%;
+	padding: 20px;
+	overflow: auto;
+	height: 100%;
 }
 
 #blog_text h1 {
-  font: normal 190% 'Yanone Kaffeesatz', arial, sans-serif;;
-  margin: 0 0 15px 0;
-  padding: 5px 0;
+	font: normal 190% 'Yanone Kaffeesatz', arial, sans-serif;;
+	margin: 0 0 15px 0;
+	padding: 5px 0;
 }
 
 /* stylesheet for sooperFish by www.sooperthemes.com -- author: jurriaan roelofs */
 html body ul.sf-menu ul, html body ul.sf-menu ul li {
-  width: 180px;
+	width: 180px;
 }
 
 html body ul.sf-menu ul ul {
-  margin: 0 0 0 180px;
+	margin: 0 0 0 180px;
 }
 
 ul.sf-menu, ul.sf-menu * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 ul.sf-menu {
-  display: block;
-  position: relative;
+	display: block;
+	position: relative;
 }
 
 ul.sf-menu li {
-  display: block;
-  list-style: none;
-  float: left;
-  position: relative;
+	display: block;
+	list-style: none;
+	float: left;
+	position: relative;
 }
 
 ul.sf-menu li:hover {
-  visibility: inherit; /* fixes IE7 'sticky bug' */
+	visibility: inherit; /* fixes IE7 'sticky bug' */
 }
 
 ul.sf-menu a {
-  display: block;
-  position: relative;
+	display: block;
+	position: relative;
 }
 
 ul.sf-menu ul {
-  position: absolute;
-  left: 0;
-  width: 150px;
-  top: auto;
-  left: -999999px;
+	position: absolute;
+	left: 0;
+	width: 150px;
+	top: auto;
+	left: -999999px;
 }
 
 ul.sf-menu ul a {
-  zoom: 1; /* IE6/7 fix */
+	zoom: 1; /* IE6/7 fix */
 }
 
 ul.sf-menu ul li {
-  float: left;
-  /* Must always be floated otherwise there will be a rogue 1px margin-bottom in IE6/7 */
-  width: 150px;
+	float: left;
+	/* Must always be floated otherwise there will be a rogue 1px margin-bottom in IE6/7 */
+	width: 150px;
 }
 
 ul.sf-menu ul ul {
-  top: 0;
-  margin: 0 0 0 150px;
+	top: 0;
+	margin: 0 0 0 150px;
 }
 
 ul.sf-menu li:hover ul, ul.sf-menu li:focus ul, ul.sf-menu li.sf-hover ul,
-  ul.sf-menu ul li:hover ul, ul.sf-menu ul li:focus ul, ul.sf-menu ul li.sf-hover ul,
-  ul.sf-menu ul ul li:hover ul, ul.sf-menu ul ul li:focus ul, ul.sf-menu ul ul li.sf-hover ul,
-  ul.sf-menu ul ul ul li:hover ul, ul.sf-menu ul ul ul li:focus ul, ul.sf-menu ul ul ul li.sf-hover ul
-  {
-  left: auto;
+	ul.sf-menu ul li:hover ul, ul.sf-menu ul li:focus ul, ul.sf-menu ul li.sf-hover ul,
+	ul.sf-menu ul ul li:hover ul, ul.sf-menu ul ul li:focus ul, ul.sf-menu ul ul li.sf-hover ul,
+	ul.sf-menu ul ul ul li:hover ul, ul.sf-menu ul ul ul li:focus ul, ul.sf-menu ul ul ul li.sf-hover ul
+	{
+	left: auto;
 }
 
 ul.sf-menu li:hover ul ul, ul.sf-menu li:focus ul ul, ul.sf-menu li.sf-hover ul ul,
-  ul.sf-menu ul li:hover ul ul, ul.sf-menu ul li:focus ul ul, ul.sf-menu ul li.sf-hover ul ul,
-  ul.sf-menu ul ul li:hover ul ul, ul.sf-menu ul ul li:focus ul ul, ul.sf-menu ul ul li.sf-hover ul ul,
-  ul.sf-menu ul ul ul li:hover ul ul, ul.sf-menu ul ul ul li:focus ul ul,
-  ul.sf-menu ul ul ul li.sf-hover ul ul {
-  left: -999999px;
+	ul.sf-menu ul li:hover ul ul, ul.sf-menu ul li:focus ul ul, ul.sf-menu ul li.sf-hover ul ul,
+	ul.sf-menu ul ul li:hover ul ul, ul.sf-menu ul ul li:focus ul ul, ul.sf-menu ul ul li.sf-hover ul ul,
+	ul.sf-menu ul ul ul li:hover ul ul, ul.sf-menu ul ul ul li:focus ul ul,
+	ul.sf-menu ul ul ul li.sf-hover ul ul {
+	left: -999999px;
 }
 
 /* theming the menu */
 nav {
-  width: 650px;
-  margin: 1px auto 0 auto;
-  float: right;
-  padding: 35px 0 0 0;
+	width: 650px;
+	margin: 1px auto 0 auto;
+	float: right;
+	padding: 35px 0 0 0;
 }
 
 ul#nav {
-  float: right;
-  margin: 25px 10px 0 0;
+	float: right;
+	margin: 25px 10px 0 0;
 }
 
 ul#nav li a {
-  font: normal 150% 'News Cycle', sans-serif;
-  text-decoration: none;
-  outline: none;
-  text-align: center;
-  z-index: 10;
-  display: block;
-  float: left;
-  height: 30px;
-  padding: 5px 14px 6px 15px;
-  position: relative;
-  overflow: hidden;
+	font: normal 150% 'News Cycle', sans-serif;
+	text-decoration: none;
+	outline: none;
+	text-align: center;
+	z-index: 10;
+	display: block;
+	float: left;
+	height: 30px;
+	padding: 5px 14px 6px 15px;
+	position: relative;
+	overflow: hidden;
 }
 
 ul#nav ul {
-  margin-top: 40px;
-  padding-bottom: 10px;
+	margin-top: 40px;
+	padding-bottom: 10px;
 }
 </style>
+
+<script>
+	function checkTeacher() {
+		var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
+		if ($("#name1").val() == "") {
+			alert("이름을 입력하세요");
+			document.addjoin.name.focus();
+			return false;
+
+		} else if ($("#password1").val() == "") {
+			alert("비밀번호를 입력하세요");
+			document.addjoin.pwd.focus();
+			return false;
+
+		} else if ($("#email1").val() == "") {
+			alert("이메일을 입력하세요");
+			document.addjoin.email.focus();
+			return false;
+
+		} else if (exptext.test($("#email1").val()) == false) {
+			alert("이 메일형식이 올바르지 않습니다.");
+			document.addjoin.email.focus();
+			return false;
+		}
+
+		$("#ttestform").submit();
+	}
+</script>
+
+
+<script>
+	function checkParent() {
+		var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
+		if ($("#name").val() == "") {
+			alert("이름을 입력하세요");
+			document.addjoin.name.focus();
+			return false;
+
+		} else if ($("#password").val() == "") {
+			alert("비밀번호를 입력하세요");
+			document.addjoin.pwd.focus();
+			return false;
+
+		} else if ($("#email").val() == "") {
+			alert("이메일을 입력하세요");
+			document.addjoin.email.focus();
+			return false;
+
+		} else if (exptext.test($("#email").val()) == false) {
+			alert("이 메일형식이 올바르지 않습니다.");
+			document.addjoin.email.focus();
+			return false;
+
+		}
+		$("#ptestform").submit();
+	}
+</script>
 
 </head>
 
 <body>
 
-  <!-- <div id="layerPopupFull"
+	<!-- <div id="layerPopupFull"
     style="position: absolute; z-index: 9; width: 100%; height: 100%; left: 0px; top: 0px; display: none; background-color: white; filter: alpha(opacity = 60); opacity: .6;">
     페이지전체영역입니다.
   </div>
@@ -628,203 +687,202 @@ ul#nav ul {
     style="position: absolute; z-index: 10; width: 200px; height: 200px; left: 50px; top: 50px; display: none; background-color: green">
  -->
 
-  <div id="main">
-    <!-- begin header -->
-    <header>
-      <div id="logo">
-        <h1>
-          <a href="login.do">다인이</a>유치원
-        </h1>
-      </div>
-    </header>
-    <form style="margin-left: 60%; margin-top: -3%" class="form-inline"
-      action="../join/login.do" method="post">
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputEmail3"> Email
-          address</label> <input type="email" class="form-control" name="email"
-          id="exampleInputEmail3" value="${cookie.email.value}"
-          placeholder="Email">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputPassword3">Password</label>
-        <input type="password" class="form-control" name="pwd"
-          id="exampleInputPassword3" placeholder="Password">
-      </div>
+	<div id="main">
+		<!-- begin header -->
+		<header>
+			<div id="logo">
+				<h1>
+					<a href="login.do">다인이</a>유치원
+				</h1>
+			</div>
+		</header>
+		
+		<form style="margin-left: 60%; margin-top: -3%" class="form-inline"
+			action="../join/login.do" method="post">
+			<div class="form-group">
+				<label class="sr-only" for="exampleInputEmail3"> Email
+					address</label> <input type="email" class="form-control" name="email"
+					id="exampleInputEmail3" value="${cookie.email.value}"
+					placeholder="Email">
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="exampleInputPassword3">Password</label>
+				<input type="password" class="form-control" name="pwd"
+					id="exampleInputPassword3" placeholder="Password">
+			</div>
 
-      <div class="checkbox" style="margin-left: 29%;">
-        <label> <input type="checkbox" name="saveEmail"
-          ${(empty cookie.email)?"":"checked"}> Remember me
-        </label>
-      </div>
-      <button type="submit" class="btn btn-default"
-        style="margin-right: 2%; margin-top: 2%;">Sign in</button>
-      <button type="button" id="jhup" class="btn btn-default"
-        style="margin-right: 2%; margin-top: 2%;">Sign up</button>
+			<div class="checkbox" style="margin-left: 29%;">
+				<label> <input type="checkbox" name="saveEmail"
+					${(empty cookie.email)?"":"checked"}> Remember me
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default"
+				style="margin-right: 2%; margin-top: 2%;">Sign in</button>
+			<button type="button" id="SignUp" class="btn btn-default"
+				style="margin-right: 2%; margin-top: 2%;">Sign up</button>
 
-      <!-- <nav class='main-nav'>
+			<!-- <nav class='main-nav'>
         <ul>
           <li><a href='../auth/login.do' class='cd-signin'>Sign in</a></li>
           <li><a href='#0' class="cd-signup">Sign up</a></li>
         </ul>
       </nav> -->
 
-    </form>
+		</form>
 
 
-    <div class="cd-user-modal" style='position: absolute; z-index: 1;'>
-      <!-- this is the entire modal form, including the background -->
-      <div class="cd-user-modal-container">
-        <!-- this is the container wrapper -->
-        <ul class="cd-switcher">
-          <li><a href="#0">선생님</a></li>
-          <li><a href="#0">학부모</a></li>
-        </ul>
+		<div class="cd-user-modal" style='position: absolute; z-index: 1;'>
+			<!-- this is the entire modal form, including the background -->
+			<div class="cd-user-modal-container">
+				<!-- this is the container wrapper -->
+				<ul class="cd-switcher">
+					<li><a href="#0">선생님</a></li>
+					<li><a href="#0">학부모</a></li>
+				</ul>
 
-        <!-- teacher sign up -->
-        <div id="cd-signup1">
-          <!-- sign up form -->
-          <form id="ttestform" class="cd-form" action="../join/add.do" method="post"
-                     enctype="multipart/form-data">
-            <input name="type" type="hidden" value="teacher">
+				<!-- teacher sign up -->
+				<div id="cd-signup1">
+					<!-- sign up form -->
+					<form id="ttestform" class="cd-form" action="../join/add.do"
+						method="post" enctype="multipart/form-data" name="addjoin">
+						<input name="type" type="hidden" value="teacher">
 
-            <p class="fieldset">
-              <label class="image-replace cd-username" for="name">Name</label>
-              <input class="full-width has-padding has-border" id="name"
-              name="name" type="text" placeholder="Username"> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="name">Name</label>
+							<input class="full-width has-padding has-border" id="name1"
+								name="name" type="text" placeholder="Username">
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-email" for="email">E-mail</label>
-              <input class="full-width has-padding has-border" id="email"
-                name="email" type="email" placeholder="E-mail"> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-email" for="email">E-mail</label>
+							<input class="full-width has-padding has-border" id="email1"
+								name="email" type="email" placeholder="E-mail">
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-username" for="cid">Class</label>
-              <input class="full-width has-padding has-border" id="cid"
-              name="cid" type="text" placeholder="Class"> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="cid">Class</label>
+							<select class="form-control" id="cid"
+                name="cid">
+									<option value="">반 선택</option>
+									<option value="c1">나비반</option>
+									<option value="c2">호랑이반</option>
+									<option value="c3">남자반</option>
+							</select>
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-username" for="tel">Tel</label> <input
-                class="full-width has-padding has-border" id="tel"
-                name="tel" type="text" placeholder="Tel"> <span class="cd-error-message">Error
-                message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="tel">Tel</label> <input
+								class="full-width has-padding has-border" id="tel" name="tel"
+								type="text" placeholder="Tel">
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-username" for="photo">Photo</label>
-              <input class="full-width has-padding has-border" id="photofile"
-                name="photofile" type="file" placeholder="Photo"> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="photo">Photo</label>
+							<input class="full-width has-padding has-border" id="photofile"
+								name="photofile" type="file" placeholder="Photo">
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-password" for="password">Password</label>
-              <input class="full-width has-padding has-border" id="password"
-                name="pwd" type="text" placeholder="Password"> <a href="#0"
-                class="hide-password">Hide</a> <span class="cd-error-message">Error
-                message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-password" for="password">Password</label>
+							<input class="full-width has-padding has-border" id="password1"
+								name="pwd" type="text" placeholder="Password"> <a
+								href="#0" class="hide-password">Hide</a>
+						</p>
 
-            <!--            <p class="fieldset">
+						<!--            <p class="fieldset">
               <input type="checkbox" id="accept-terms"> <label
                 for="accept-terms">I agree to the <a href="#0">Terms</a></label>
             </p>
  -->
-            <p class="fieldset">
-              <input id="ttest" class="full-width has-padding" type="submit"
-                value="Create account">
-            </p>
-          </form>
+						<p class="fieldset">
+							<input id="ttest" class="full-width has-padding" type="submit"
+								onclick="return checkTeacher()" value="Create account">
+						</p>
+					</form>
 
-          <!-- <a href="#0" class="cd-close-form">Close</a> -->
-        </div>
-        <!-- cd- teacher signup -->
+					<!-- <a href="#0" class="cd-close-form">Close</a> -->
+				</div>
+				<!-- cd- teacher signup -->
 
-        <!-- parent sign up -->
-        <div id="cd-signup">
-          <!-- sign up form -->
-          <form id="ptestform" class="cd-form" action="../join/add.do" method="post"
-            enctype="multipart/form-data">
-            <p class="fieldset">
-              <input name="type" type="hidden" value="parent">
-            </p>
-            
-            <p class="fieldset">
-              <label class="image-replace cd-username" for="name">Name</label>
-              <input class="full-width has-padding has-border" id="name"
-                name="name" type="text" placeholder="Username"> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+				<!-- parent sign up -->
+				<div id="cd-signup">
+					<!-- sign up form -->
+					<form id="ptestform" class="cd-form" action="../join/add.do"
+						method="post" enctype="multipart/form-data" name="addjoin">
+						<p class="fieldset">
+							<input name="type" type="hidden" value="parent">
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-email" for="email">E-mail</label>
-              <input class="full-width has-padding has-border" id="email"
-                name="email" type="text" placeholder="E-mail">
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="name">Name</label>
+							<input class="full-width has-padding has-border" id="name"
+								name="name" type="text" placeholder="Username">
+						</p>
+
+						<p class="fieldset">
+							<label class="image-replace cd-email" for="email">E-mail</label>
+							<input class="full-width has-padding has-border" id="email"
+								name="email" type="email" placeholder="E-mail">
+						</p>
 
             <p class="fieldset">
               <label class="image-replace cd-username" for="kidClass">KidClass</label>
-              <input class="full-width has-padding has-border" id="kidClass"
-                name="kidClass" type="text" placeholder="KidClass"> <span
-                class="cd-error-message">Error message here!</span>
+              <select class="form-control" id="kidClass"
+                name="kidClass">
+                  <option value="">반 선택</option>
+                  <option value="나비반">나비반</option>
+                  <option value="호랑이반">호랑이반</option>
+                  <option value="남자반">남자반</option>
+              </select>
             </p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-username" for="kidName">KidName</label>
-              <input class="full-width has-padding has-border" id="kidName"
-                name="kidName" type="text" placeholder="KidName"> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="kidName">KidName</label>
+							<input class="full-width has-padding has-border" id="kidName"
+								name="kidName" type="text" placeholder="KidName">
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-username" for="tel">Tel</label> <input
-                class="full-width has-padding has-border" id="tel" name="tel"
-                type="text" placeholder="Tel"> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="tel">Tel</label> <input
+								class="full-width has-padding has-border" id="tel" name="tel"
+								type="text" placeholder="Tel">
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-username" for="photo">Photo</label>
-              <input class="full-width has-padding has-border" name="photofile"
-                id="photo" type="file" placeholder="Photo"> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="photo">Photo</label>
+							<input class="full-width has-padding has-border" name="photofile"
+								id="photo" type="file" placeholder="Photo">
+						</p>
 
-            <p class="fieldset">
-              <label class="image-replace cd-password" for="pwd">Password</label>
-              <input class="full-width has-padding has-border" id="pwd"
-                name="pwd" type="text" placeholder="Password"> <a
-                href="#0" class="hide-password">Hide</a> <span
-                class="cd-error-message">Error message here!</span>
-            </p>
+						<p class="fieldset">
+							<label class="image-replace cd-password" for="password">Password</label>
+							<input class="full-width has-padding has-border" id="password"
+								name="pwd" type="text" placeholder="Password"> <a
+								href="#0" class="hide-password">Hide</a>
+						</p>
 
-            <!--            <p class="fieldset">
+						<!--            <p class="fieldset">
               <input type="checkbox" id="accept-terms"> <label
                 for="accept-terms">I agree to the <a href="#0">Terms</a></label>
             </p>
  -->
-            <p class="fieldset">
-              <input id="ptest" class="full-width has-padding" type="submit"
-                value="Create account">
-            </p>
-          </form>
+						<p class="fieldset">
+							<input id="ptest" class="full-width has-padding" type="submit"
+								onclick="return checkParent()" value="Create account">
+						</p>
+					</form>
 
-          <!-- <a href="#0" class="cd-close-form">Close</a> -->
-        </div>
-        <!-- cd- parent signup -->
+					<!-- <a href="#0" class="cd-close-form">Close</a> -->
+				</div>
+				<!-- cd- parent signup -->
 
-<!--        <div id="cd-reset-password">
+				<!--        <div id="cd-reset-password">
           reset password form
           <p class="cd-form-message">Lost your password? Please enter
             your email address. You will receive a link to create a new
             password.</p>
  -->
-<!--          <form class="cd-form">
+				<!--          <form class="cd-form">
             <p class="fieldset">
               <label class="image-replace cd-email" for="reset-email">E-mail</label>
               <input class="full-width has-padding has-border" id="reset-email"
@@ -838,76 +896,76 @@ ul#nav ul {
             </p>
           </form>
  -->
-          <p class="cd-form-bottom-message">
-            <a href="#0">Back to log-in</a>
-          </p>
-        </div>
-        <!-- cd-reset-password -->
-        <a href="#0" class="cd-close-form">Close</a>
-      </div>
-      <!-- cd-user-modal-container -->
-    </div>
-    <!-- cd-user-modal -->
+				<p class="cd-form-bottom-message">
+					<a href="#0">Back to log-in</a>
+				</p>
+			</div>
+			<!-- cd-reset-password -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div>
+		<!-- cd-user-modal-container -->
+	</div>
+	<!-- cd-user-modal -->
 
-    <!-- Gem jQuery -->
-
-
-    <!-- /sign up -->
+	<!-- Gem jQuery -->
 
 
+	<!-- /sign up -->
 
 
-    <!-- begin content -->
-    <div id="site_content" style='position: relative; z-index: 0'>
-      <ul class="slideshow">
-        <li class="show"><img width="950" height="450"
-          src="http://cfile29.uf.tistory.com/image/253383405172B2E511C442"
-          alt="&quot;Child is father of the man - William Wordsworth - &quot;" /></li>
-        <li><img width="950" height="450"
-          src="http://cfile7.uf.tistory.com/image/2762F33D5172B19E043783"
-          alt="&quot;It is the greatest invention in the world is just the heart of a child - Thomas Alva Edison -&quot;" /></li>
-        <li><img width="950" height="450"
-          src="http://cfile226.uf.daum.net/image/173B31044CF68D44025B69"
-          alt="&quot;국민의 운명은 권력을 잡은 자의 손에 달려 있는 것이 아니라
+
+
+	<!-- begin content -->
+	<div id="site_content" style='position: relative; z-index: 0'>
+		<ul class="slideshow">
+			<li class="show"><img width="950" height="450"
+				src="http://cfile29.uf.tistory.com/image/253383405172B2E511C442"
+				alt="&quot;Child is father of the man - William Wordsworth - &quot;" /></li>
+			<li><img width="950" height="450"
+				src="http://cfile7.uf.tistory.com/image/2762F33D5172B19E043783"
+				alt="&quot;It is the greatest invention in the world is just the heart of a child - Thomas Alva Edison -&quot;" /></li>
+			<li><img width="950" height="450"
+				src="http://cfile226.uf.daum.net/image/173B31044CF68D44025B69"
+				alt="&quot;국민의 운명은 권력을 잡은 자의 손에 달려 있는 것이 아니라
           엄마의 손에 달려있으므로 우리는 인류의 교육자인 엄마를 계발하는데 노력해야 한다. - Friedrich Wilhelm August Frobel - &quot;" /></li>
-        <li><img width="950" height="450" src="../images/kid.jpeg"
-          alt="&quot;Children and parents need more than four weeks are things parents. - James Dobson -&quot;" /></li>
-        <li><img width="950" height="450" src="../images/kid2.jpeg"
-          alt="&quot;어린이는 아래의 세 가지 세상에서 온갖 것을 미화시킨다. 이야기 세상, 노래 세상, 그림 세상. - 방정환 -&quot;" /></li>
-        <li><img width="950" height="450" src="../images/kid3.jpeg"
-          alt="&quot;어린이를 내 아들놈, 내 딸년하고 자기 물건같이 알지 말고 자기보다 한결 더 새로운 시대의 새인물인 것을 알아야 한다. - 방정환 -&quot;" /></li>
-        <li><img width="950" height="450" src="../images/kid4.jpeg"
-          alt="&quot;What is the most well- bred young children as they have seen their parents .
+			<li><img width="950" height="450" src="../images/kid.jpeg"
+				alt="&quot;Children and parents need more than four weeks are things parents. - James Dobson -&quot;" /></li>
+			<li><img width="950" height="450" src="../images/kid2.jpeg"
+				alt="&quot;어린이는 아래의 세 가지 세상에서 온갖 것을 미화시킨다. 이야기 세상, 노래 세상, 그림 세상. - 방정환 -&quot;" /></li>
+			<li><img width="950" height="450" src="../images/kid3.jpeg"
+				alt="&quot;어린이를 내 아들놈, 내 딸년하고 자기 물건같이 알지 말고 자기보다 한결 더 새로운 시대의 새인물인 것을 알아야 한다. - 방정환 -&quot;" /></li>
+			<li><img width="950" height="450" src="../images/kid4.jpeg"
+				alt="&quot;What is the most well- bred young children as they have seen their parents .
                 Hypocrisy is not the first obligation of parents . - George Bernard Shaw -&quot;" /></li>
-      </ul>
-    </div>
-    <!-- end content -->
+		</ul>
+	</div>
+	<!-- end content -->
 
-    <!-- begin footer -->
-    <footer>
-      <p style="font-size: 15px;">
-        Copyright &copy; 2015 다인이유치원. All Rights Reserved. <a
-          href="http://www.css3templates.co.uk">Design from 갓지현(feat. 지호)</a>
-      </p>
-      <p>
-        <img src="../images/twitter.png" alt="twitter" /> &nbsp;<img
-          src="../images/facebook.png" alt="facebook" /> &nbsp;<img
-          src="../images/rss.png" alt="rss" />
-      </p>
-    </footer>
-    <!-- end footer -->
+	<!-- begin footer -->
+	<footer>
+		<p style="font-size: 15px;">
+			Copyright &copy; 2015 다인이유치원. All Rights Reserved. <a
+				href="http://www.css3templates.co.uk">Design from 갓지현(feat. 지호)</a>
+		</p>
+		<p>
+			<img src="../images/twitter.png" alt="twitter" /> &nbsp;<img
+				src="../images/facebook.png" alt="facebook" /> &nbsp;<img
+				src="../images/rss.png" alt="rss" />
+		</p>
+	</footer>
+	<!-- end footer -->
 
-  </div>
-  <!-- javascript at the bottom for fast page loading -->
-  <script type="text/javascript" src="../js/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.easing-sooper.js"></script>
-  <script type="text/javascript" src="../js/jquery.sooperfish.js"></script>
-  <script type="text/javascript" src="../js/image_fade.js"></script>
-  <!-- initialise sooperfish menu -->
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('ul.sf-menu').sooperfish();
-    });
-  </script>
+	</div>
+	<!-- javascript at the bottom for fast page loading -->
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.easing-sooper.js"></script>
+	<script type="text/javascript" src="../js/jquery.sooperfish.js"></script>
+	<script type="text/javascript" src="../js/image_fade.js"></script>
+	<!-- initialise sooperfish menu -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('ul.sf-menu').sooperfish();
+		});
+	</script>
 </body>
 </html>

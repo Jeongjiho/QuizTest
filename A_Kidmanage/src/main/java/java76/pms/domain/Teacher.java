@@ -5,14 +5,18 @@ import java.io.Serializable;
 public class Teacher implements Serializable {
   private static final long serialVersionUID = 1L;
 
+  protected String member_uid;
   protected String name;
   protected String cid;
   protected String tel;
   protected String photo;
+  protected String pwd;
+
 
   @Override
   public String toString() {
-    return "Teacher [name=" + name + ", cid=" + cid + ", tel=" + tel + ", photo=" + photo + "]";
+    return "Teacher [member_uid=" + member_uid + ", name=" + name + ", cid=" + cid + ", tel=" + tel + ", photo=" + photo
+        + ", pwd=" + pwd + "]";
   }
 
   public String getName() {
@@ -45,6 +49,22 @@ public class Teacher implements Serializable {
 
   public void setPhoto(String photo) {
     this.photo = photo;
+  }
+
+  public String getMember_uid() {
+    return member_uid;
+  }
+
+  public void setMember_uid(String member_uid) {
+    this.member_uid = member_uid;
+  }
+
+  public String getPwd() {
+    return pwd;
+  }
+
+  public void setPwd(String pwd) {
+    this.pwd = pwd;
   }
 
  

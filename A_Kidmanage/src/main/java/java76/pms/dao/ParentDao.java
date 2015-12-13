@@ -15,9 +15,8 @@ public interface ParentDao {
 
   int update(Parent parent);
 
-  Parent getInfo(int m_uid);
+  Parent getInfo(int member_uid);
 
-  
 }
 
 

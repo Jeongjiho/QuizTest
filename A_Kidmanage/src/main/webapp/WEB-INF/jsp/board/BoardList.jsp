@@ -7,6 +7,9 @@
 <html>
 <head>
 
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>
+
 <link
 	href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900'
 	rel='stylesheet' type='text/css'>
@@ -33,9 +36,10 @@
 <title></title>
 </head>
 
-  <div align="right" style="font-size: 12px; margin-right:15%; margin-top:5%">
-<jsp:include page="/Header.jsp" />
-</div> 
+<div align="right"
+	style="font-size: 12px; margin-right: 15%; margin-top: 5%">
+	<jsp:include page="/Header.jsp" />
+</div>
 
 
 <body>
@@ -54,9 +58,12 @@
 						href="../board/list.do">공지사항</a></li>
 					<li style="font-size: 12px;"><a href="#">우리 아이들</a>
 						<ul>
-							<li style="font-size: 12px;"><a href="../kidManage/list.do">나비반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">호랑이반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">남자반</a></li>
+							<li style="font-size: 12px;"><a
+								href="../kidManage/c1List.do">나비반</a></li>
+							<li style="font-size: 12px;"><a
+								href="../kidManage/c2List.do">호랑이반</a></li>
+							<li style="font-size: 12px;"><a
+								href="../kidManage/c3List.do">남자반</a></li>
 						</ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
@@ -73,10 +80,12 @@
 			<tr class="titleTr">
 				<td class="titleTd"></td>
 				<td colspan="4"></td>
-				<td id="open" class="plusTd button"></td>
+				<c:if test="${loginUser.type == 'teacher'}">
+					<td id="open" class="plusTd button"></td>
+				</c:if>
 			</tr>
 			<tr class="headingTr">
-			<td>번호</td>
+				<td>번호</td>
 				<td>제목</td>
 				<td>작성자</td>
 				<td>등록날짜</td>
@@ -103,56 +112,55 @@
 				enctype="multipart/form-data">
 				<table>
 					<tr>
-						<th>Title</th>
+              <th>제목</th>
 						<td><input type="text" id="Title" name="title"
 							required="required" /></td>
 					</tr>
 
 					<tr>
-						<th>Writer</th>
+              <th>작성자</th>
 						<td><input type="text" id="Writer" name="writer"
 							required="required" /></td>
 					</tr>
 
 					<tr>
-						<th>Content</th>
+              <th>내용</th>
 						<td><textarea rows='10' id='Content' name='content' cols='46'
 								style="font-size: 14px;" placeholder="Content"></textarea></td>
 					</tr>
 
 					<tr>
-						<th>Password</th>
+              <th>암호</th>
 						<td><input type="password" id="Password" name="pwd"
 							required="required" /></td>
 					</tr>
 
 					<tr>
-						<th>File</th>
+              <th>파일</th>
 						<td><input type='file' id='File' name="file"
 							style="font-size: 18px" /></td>
 					</tr>
 
 					<tr>
 						<td align="center"><br>
-							<button type='submit'>전송</button>
+							<button type='submit'>등록</button>
 						<td>
 					</tr>
 				</table>
 			</form>
 		</div>
-		
-		    <footer>
-      <p style="font-size: 15px;">
-        Copyright &copy; 2015 다인이유치원. All Rights Reserved. <a
-          href="http://www.css3templates.co.uk">Design from
-          갓지현(feat. 지호)</a>
-      </p>
-      <p>
-        <img src="../images/twitter.png" alt="twitter" />&nbsp;<img
-          src="../images/facebook.png" alt="facebook" />&nbsp;<img
-          src="../images/rss.png" alt="rss" />
-      </p>
-    </footer>
+
+		<footer>
+			<p style="font-size: 15px;">
+				Copyright &copy; 2015 다인이유치원. All Rights Reserved. <a
+					href="http://www.css3templates.co.uk">Design from 갓지현(feat. 지호)</a>
+			</p>
+			<p>
+				<img src="../images/twitter.png" alt="twitter" />&nbsp;<img
+					src="../images/facebook.png" alt="facebook" />&nbsp;<img
+					src="../images/rss.png" alt="rss" />
+			</p>
+		</footer>
 
 
 	</div>

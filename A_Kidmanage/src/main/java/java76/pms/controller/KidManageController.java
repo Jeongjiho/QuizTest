@@ -1,6 +1,7 @@
 package java76.pms.controller;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -41,8 +42,8 @@ public class KidManageController {
       .toFile(new File(servletContext.getRealPath(SAVED_DIR) + "/s-" + newFileName));
     }
     kidManageDao.insert(kidManage);
-    
-    return "redirect:list.do";
+    String cid = kidManage.getCid();
+    return "redirect:" + cid + "List.do";
   }
 
   //---------------------------------------------------------
@@ -54,16 +55,58 @@ public class KidManageController {
       model.addAttribute("errorCode", "401");
       return "/kidManage/KidError.jsp";
     }
-    return "redirect:list.do";
-  }
+    KidManage kidManage = kidManageDao.selectOne(no);
+    String cid = kidManage.getCid();
+    return "redirect:" + cid + "List.do";  }
 
   //---------------------------------------------------------
 
-  @RequestMapping("list")
-  public String list(HttpServletRequest request) throws Exception {
+  @RequestMapping(value="edit", method=RequestMethod.POST)
+  public String edit(int change, int no, Model model) throws Exception {
 
+    HashMap<String,Integer> paramMap = new HashMap<>();
+    paramMap.put("change", change);
+    paramMap.put("no", no);
+    
+    if (kidManageDao.edit(paramMap) <= 0) {
+      model.addAttribute("errorCode", "401");
+      return "/kidManage/KidError.jsp";
+    }
+    
+    KidManage kidManage = kidManageDao.selectOne(no);
+    String cid = kidManage.getCid();
+    return "redirect:" + cid + "List.do";
+  }
+  
+  
+  //---------------------------------------------------------
 
-    List<KidManage> kidManages = kidManageDao.selectList();
+  @RequestMapping("c1List")
+  public String c1List(String cid, HttpServletRequest request) throws Exception {
+
+    List<KidManage> kidManages = kidManageDao.selectList("c1");
+
+    request.setAttribute("kidManages", kidManages);
+
+    return "/kidManage/KidList";
+
+  }
+  
+  @RequestMapping("c2List")
+  public String c2List(String cid, HttpServletRequest request) throws Exception {
+
+    List<KidManage> kidManages = kidManageDao.selectList("c2");
+
+    request.setAttribute("kidManages", kidManages);
+
+    return "/kidManage/KidList";
+
+  }
+  
+  @RequestMapping("c3List")
+  public String c3List(String cid, HttpServletRequest request) throws Exception {
+
+    List<KidManage> kidManages = kidManageDao.selectList("c3");
 
     request.setAttribute("kidManages", kidManages);
 
@@ -75,9 +118,7 @@ public class KidManageController {
 
   @RequestMapping(value="detail", method=RequestMethod.GET)
   public String detail(int no, Model model) throws Exception {
-    System.out.println(no);
     KidManage kidManage = kidManageDao.selectOne(no);
-    System.out.println(kidManage);
     model.addAttribute("kidManage", kidManage);
     return "/kidManage/KidDetail";
   }
@@ -102,13 +143,12 @@ public class KidManageController {
       kidManage.setPhoto(kidManage.getPhoto());
     } 
 
-    System.out.println(kidManage);
     if (kidManageDao.update(kidManage) <= 0) {
       model.addAttribute("errorCode", "401");
       return "/kidManage/KidError.jsp";
     } 
 
-    return "redirect:../kidManage/list.do";
-  }
+    String cid = kidManage.getCid();
+    return "redirect:" + cid + "List.do";  }
 }
 

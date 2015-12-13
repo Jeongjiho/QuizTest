@@ -32,7 +32,7 @@
 		kidName=#{kidName},
 		tel=#{tel},
 		photo=#{photo}
-		where email=#{email} and pwd=sha1(#{pwd})
+		where member_uid=#{member_uid}
 	</update>
 	
 	<select id="getInfo" resultType="parent" parameterType="int">
@@ -45,7 +45,7 @@
 	from 
 		parent
 	where
-		member_uid=#{member_uid}
+	    member_uid=#{member_uid}
 	</select>
 	
 	

@@ -647,11 +647,14 @@ ul#nav ul {
 					<li class="selected" style="font-size: 12px;">
 					<a href="../board/list.do">공지사항</a></li>
 					<li style="font-size: 12px;"><a href="#">우리 아이들</a>
-						<ul>
-							<li style="font-size: 12px;"><a href="../kidManage/list.do">나비반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">호랑이반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">남자반</a></li>
-						</ul></li>
+            <ul>
+              <li style="font-size: 12px;"><a
+                href="../kidManage/c1List.do">나비반</a></li>
+              <li style="font-size: 12px;"><a
+                href="../kidManage/c2List.do">호랑이반</a></li>
+              <li style="font-size: 12px;"><a
+                href="../kidManage/c3List.do">남자반</a></li>
+            </ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
 							<li><a href="gallery1.do" enctype="multipart/form-data">나비반</a></li>

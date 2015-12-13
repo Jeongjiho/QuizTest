@@ -6,9 +6,6 @@
 <html>
 <head>
 
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
-
 <link
 	href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900'
 	rel='stylesheet' type='text/css'>
@@ -36,7 +33,8 @@
 </head>
   <div align="right" style="font-size: 12px; margin-right:15%; margin-top:5%">
 <jsp:include page="/Header.jsp" />
-</div> <body>
+</div> 
+<body>
 	<div id="main">
 		<!-- begin header -->
 		<header>
@@ -65,63 +63,61 @@
 							<li><a href="portfolio_two.html">호랑이반</a></li>
 							<li><a href="portfolio_two.html">남자반</a></li>
 						</ul></li>
-					<li style="font-size: 12px;"><a href="blog.html">식단표</a></li>
 				</ul>
 			</nav>
 		</header>
 		<!-- end header -->
 
-		<c:if test="${not empty board}">
-			<form id='form1' action='update.do' method='post'
+		<c:if test="${not empty parent}">
+			<form id='form1' action='parentUpdate.do' method='post'
 				enctype="multipart/form-data">
 				<table class="flatTable">
+
 					<tr class="headingTr">
-						<th>번호</th>
-						<td class="titleTd"><input type='text' value='${board.no}'
-							name='no' readonly></td>
+						<th>이름</th>
+						<td class="titleTd"><input type='text' value='${parent.name}'
+              name='name'> <input type="hidden" name="member_uid"
+              value='${loginUser.m_uid}'></td>
 					</tr>
+
+          <tr class="headingTr">
+            <th>아이 반</th>
+            <td class="titleTd">
+            <select name="kidClass">
+                <option value="">반 선택</option>
+                <option value="나비반">나비반</option>
+                <option value="호랑이반">호랑이반</option>
+                <option value="남자반">남자반</option>
+            </select></td>
+          </tr>
+          
 					<tr class="headingTr">
-						<th>제목</th>
-						<td class="titleTd"><input type='text' value='${board.title}'
-							name='title'></td>
+						<th>아이 이름</th>
+						<td class="titleTd"><input type='text'
+							value='${parent.kidName}' name='kidName'></td>
 					</tr>
+
 					<tr class="headingTr">
-						<th>작성자</th>
-						<td class="titleTd">${board.writer}</td>
-					</tr>
+						<th>전화번호</th>
+            <td class="titleTd"><input type='text'
+              value='${parent.tel}' name='tel'></td>					</tr>
+
 					<tr class="headingTr">
-						<th>내용</th>
-						<td><textarea rows='10' cols='60' name='content'>${board.content}</textarea></td>
-					</tr>
-					<tr>
-						<th>등록일</th>
-						<td>${board.createdDate}</td>
-					</tr>
-					<tr>
-						<th>암호</th>
-						<td><input id='inputPassword' type='password' name='pwd'></td>
-					</tr>
-					<tr>
-						<th>파일</th>
-						<td><a href='../attachfile/${board.attachFile}'>${board.attachFile}</a><br>
-							<input type='file' name='file'> <input type='hidden'
-							name='attachFile' value='${board.attachFile}'></td>
+						<th>사진</th>
+						<td><img width='130' height='130'
+							src='../file/${(empty parent.photo)?"anonymous.png":parent.photo}'><br>
+							<input type='file' name='photofile'> <input type='hidden'
+							name='photo' value='${parent.photo}'></td>
 					</tr>
 				</table>
 				<br>
-				<c:if test="${loginUser.type == 'teacher'}">
-					<p style="margin-left: 100px;">
-						<a style="margin-left: 30px; font-size: medium;"
-							onclick="Submit()">변경</a> <a
-							style="margin-left: 30px; font-size: medium;" id='aDelete'
-							href='delete.do?no=${board.no}' class='button2'
-							onclick='deleteBoard()'>삭제</a>
-					</p>
-				</c:if>
+				<p style="margin-left: 100px;">
+					<a style="margin-left: 30px; font-size: medium;" onclick="Update()">변경</a>
+				</p>
 			</form>
 		</c:if>
-		<c:if test="${empty board}">
-			<p>해당 번호의 게시물을 찾을 수 없습니다.</p>
+		<c:if test="${empty parent}">
+			<p>존재하지 않는 정보입니다.</p>
 		</c:if>
 	</div>
 </body>
@@ -142,14 +138,8 @@
 </script>
 
 <script>
-    function deleteBoard() {
-      var password = document.getElementById('inputPassword').value;
-      var href = document.getElementById('aDelete').href + "&pwd="
-          + password;
-      document.getElementById('aDelete').href = href;
-    }
     
-    function Submit() {
+    function Update() {
         $("#form1").submit();
       }
   </script>

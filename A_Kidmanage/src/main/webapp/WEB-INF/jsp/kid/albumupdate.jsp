@@ -27,7 +27,9 @@
   
   </script>
 </head>
-
+  <div align="right" style="font-size: 12px; margin-right:15%; margin-top:5%">
+<jsp:include page="/Header.jsp" />
+</div> 
 <body>
 	<div id="main">
 
@@ -36,7 +38,7 @@
 			<div id="logo"
 				style="margin-bottom: 0%; margin-top: 2%; font-size: 11px;">
 				<h1>
-					<a href="login.do">다인이</a>유치원
+					<a href="../kid/main.do">다인이</a>유치원
 				</h1>
 			</div>
 			<nav>
@@ -44,11 +46,14 @@
 					<li class="selected" style="font-size: 12px;"><a
 						href="index.html">공지사항</a></li>
 					<li style="font-size: 12px;"><a href="#">우리 아이들</a>
-						<ul>
-							<li style="font-size: 12px;"><a href="portfolio_one.html">나비반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">호랑이반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">남자반</a></li>
-						</ul></li>
+            <ul>
+              <li style="font-size: 12px;"><a
+                href="../kidManage/c1List.do">나비반</a></li>
+              <li style="font-size: 12px;"><a
+                href="../kidManage/c2List.do">호랑이반</a></li>
+              <li style="font-size: 12px;"><a
+                href="../kidManage/c3List.do">남자반</a></li>
+            </ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
 							<li><a href="gallery1.do">나비반</a></li>

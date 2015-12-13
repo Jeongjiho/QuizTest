@@ -19,19 +19,19 @@ jQuery(document).ready(function($){
 	//open login-form form
 	mainNav.on('click', '.cd-signup1', signup1_selected);
 	
-	$("#jhup").click( function(){
+	$("#SignUp").click( function(){
 		
 		signup_selected();
 		signup1_selected();
 	});
 	
-	$("#ptest").click( function(){
-		$("#ptestform").submit();
-	});
-	
-	$("#ttest").click( function() {
-		$("#ttestform").submit();
-	});
+//	$("#ptest").click( function(){
+//		$("#ptestform").submit();
+//	});
+//	
+//	$("#ttest").click( function() {
+//		$("#ttestform").submit();
+//	});
 	
 	
 	//close modal

@@ -95,8 +95,6 @@ public class BoardController {
       board.setAttachFile(null);
     }
 
-    System.out.println(board);
-    
     if (boardDao.update(board) <= 0) {
       model.addAttribute("errorCode", "401");
       return "board/BoardError";

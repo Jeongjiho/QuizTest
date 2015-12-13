@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Parent implements Serializable {
   private static final long serialVersionUID = 1L;
 
+  protected String member_uid;
   protected String name;
   protected String email;
   protected String kidClass;
@@ -13,10 +14,11 @@ public class Parent implements Serializable {
   protected String photo;
   protected String pwd;
 
+
   @Override
   public String toString() {
-    return "Parent [name=" + name + ", email=" + email + ", kidClass=" + kidClass + ", kidName=" + kidName + ", tel="
-        + tel + ", photo=" + photo + ", pwd=" + pwd + "]";
+    return "Parent [member_uid=" + member_uid + ", name=" + name + ", email=" + email + ", kidClass=" + kidClass
+        + ", kidName=" + kidName + ", tel=" + tel + ", photo=" + photo + ", pwd=" + pwd + "]";
   }
 
   public String getName() {
@@ -75,4 +77,12 @@ public class Parent implements Serializable {
     this.pwd = pwd;
   }
 
+  public String getMember_uid() {
+    return member_uid;
+  }
+
+  public void setMember_uid(String member_uid) {
+    this.member_uid = member_uid;
+  }
+  
 }

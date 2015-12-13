@@ -1,12 +1,13 @@
 package java76.pms.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import java76.pms.domain.KidManage;
 
 public interface KidManageDao {
 
-  List<KidManage> selectList();
+  List<KidManage> selectList(String cid);
 
   int insert(KidManage kidManage);
 
@@ -15,6 +16,8 @@ public interface KidManageDao {
   int update(KidManage kidManage);
 
   KidManage selectOne(int no);
+
+  int edit(HashMap<String, Integer> paramMap);
 
 }
 

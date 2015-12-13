@@ -89,20 +89,36 @@ public class JoinController {
   }
 
   //---------------------------------------------------------
-//
-//  @RequestMapping(value="detail", method=RequestMethod.GET)
-//  public String detail(String email, Model model) throws Exception {
-//    Parent parent = parentDao.selectOne(email);
-//    model.addAttribute("parent", parent);
-//    return "/member/MemberDetail";
-//  }
-
-
+  @RequestMapping("detail")
+  public String detail(int m_uid, Model model) throws Exception {
+    Member member = memberDao.selectOne(m_uid);
+    
+    if (member.getType().equals("parent")) {
+    } else if (member.getType().equals("teacher")) {
+    }
+    return "/member/MemberDetail";
+  }
+//---------------------------------------------------------
+  
+  @RequestMapping("parentDetail")
+  public String parentDetail(int member_uid, Model model) throws Exception {
+    Parent parent = parentDao.getInfo(member_uid);
+    model.addAttribute("parent", parent);
+    return "/parent/ParentDetail";
+  }
+  //---------------------------------------------------------
+  
+  @RequestMapping("teacherDetail")
+  public String teacherDetail(int member_uid, Model model) throws Exception {
+    Teacher teacher = teacherDao.getInfo(member_uid);
+    model.addAttribute("teacher", teacher);
+    return "/teacher/TeacherDetail";
+  }
   //---------------------------------------------------------
 
-
-  @RequestMapping(value="update", method=RequestMethod.POST)
-  public String update(Parent parent, MultipartFile photofile, Model model) throws Exception {
+  @RequestMapping(value="parentUpdate", method=RequestMethod.POST)
+  public String parentUpdate(
+      Parent parent, MultipartFile photofile, Model model) throws Exception {
 
     if (photofile.getSize() > 0) {
       String newFileName = MultipartHelper.generateFilename(photofile.getOriginalFilename());  
@@ -119,14 +135,36 @@ public class JoinController {
 
     if (parentDao.update(parent) <= 0) {
       model.addAttribute("errorCode", "401");
-      System.out.println(parent.getEmail());
       return "/parent/MemberAuthError";
     } 
 
-    return "redirect:../board/list.do";
+    return "redirect:../kid/main.do";
   }
 
+  //---------------------------------------------------------
+  @RequestMapping(value="teacherUpdate", method=RequestMethod.POST)
+  public String teacherUpdate(
+      Teacher teacher, MultipartFile photofile, Model model) throws Exception {
+    if (photofile.getSize() > 0) {
+      String newFileName = MultipartHelper.generateFilename(photofile.getOriginalFilename());  
+      File attachfile = new File(servletContext.getRealPath(SAVED_DIR) + "/" + newFileName);
+      photofile.transferTo(attachfile);
+      teacher.setPhoto(newFileName);
+      Thumbnails.of(new File(servletContext.getRealPath(SAVED_DIR) + "/" + newFileName))
+      .size(60,44)
+      .outputQuality(1.0)
+      .toFile(new File(servletContext.getRealPath(SAVED_DIR) + "/s-" + newFileName));
+    } else if (teacher.getPhoto().length() > 0) { 
+      teacher.setPhoto(teacher.getPhoto());
+    } 
 
+    if (teacherDao.update(teacher) <= 0) {
+      model.addAttribute("errorCode", "401");
+      return "/teacher/MemberAuthError";
+    } 
+
+    return "redirect:../kid/main.do";
+  }
   //---------------------------------------------------------
 
 
@@ -153,17 +191,13 @@ public class JoinController {
     paramMap.put("email", email);
     paramMap.put("pwd", pwd);
     
-    System.out.println(paramMap);
-    
     Member member = memberDao.login(paramMap);
-    System.out.println(member);
     
     if (member == null) { // 로그인 실패!
       session.invalidate(); // 세션을 무효화시킴. => 새로 세션 객체 생성!
       System.out.println(session);
       return "redirect:../kid/login.do";
     }
-    
     
     if (member.getType().equals("parent")) {
       Parent parent = parentDao.getInfo(member.getM_uid());

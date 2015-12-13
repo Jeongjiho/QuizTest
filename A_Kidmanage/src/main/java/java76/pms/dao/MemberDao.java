@@ -15,11 +15,12 @@ public interface MemberDao {
 
   int update(Member member);
 
-  Member selectOne(String id);
+  Member selectOne(int m_uid);
 
   Member login(Map<String, Object> paramMap);
   
   Member logincheck(Map<String, Object> paramMap);
+
 
 }
 

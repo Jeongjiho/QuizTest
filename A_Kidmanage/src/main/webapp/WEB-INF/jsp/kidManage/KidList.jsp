@@ -1,8 +1,8 @@
-
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +37,6 @@
 <jsp:include page="/Header.jsp" />
 </div> 
 
-
-
 <body>
 	<div id="main">
 		<!-- begin header -->
@@ -54,11 +52,11 @@
 					<li class="selected" style="font-size: 12px;"><a
 						href="../board/list.do">공지사항</a></li>
 					<li style="font-size: 12px;"><a href="#">우리 아이들</a>
-						<ul>
-							<li style="font-size: 12px;"><a href="../kidManage/list.do">나비반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">호랑이반</a></li>
-							<li style="font-size: 12px;"><a href="portfolio_two.html">남자반</a></li>
-						</ul></li>
+            <ul>
+              <li style="font-size: 12px;"><a href="../kidManage/c1List.do">나비반</a></li>
+              <li style="font-size: 12px;"><a href="../kidManage/c2List.do">호랑이반</a></li>
+              <li style="font-size: 12px;"><a href="../kidManage/c3List.do">남자반</a></li>
+            </ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
 							<li><a href="../kid/gallery1.do">나비반</a></li>
@@ -74,8 +72,9 @@
 			<tr class="titleTr">
 				<td class="titleTd"></td>
 				<td colspan="3"></td>
-				<td id="open" class="plusTd button"></td>
-			</tr>
+        <c:if test="${loginUser.type == 'teacher'}">
+          <td id="open" class="plusTd button"></td>
+        </c:if>			</tr>
 			<tr class="headingTr">
 				<td>이름</td>
 				<td>나이</td>
@@ -83,16 +82,22 @@
 				<td>출석</td>
 			</tr>
 
-			<c:forEach var="kidManage" items="${kidManages}">
-				<tr>
-					<td><a href='detail.do?no=${kidManage.no}'>${kidManage.name}</a></td>
-					<td>${kidManage.age}</td>
-					<td>${kidManage.gender}</td>
-					<td><input type="button" name="check1" onclick="changeCheck()"
-						value="${(kidManage.check1 == 0)?'등원':'하원'}"></td>
-				</tr>
-			</c:forEach>
-		</table>
+      <c:forEach var="kidManage" items="${kidManages}">
+        <tr>
+          <td><a href='detail.do?no=${kidManage.no}'>${kidManage.name}</a></td>
+          <td>${kidManage.age}</td>
+          <td>${kidManage.gender}</td>
+          <c:if test="${loginUser.type == 'teacher'}">
+            <td><input type="button" class="btn-default" name="check1"
+              onclick="changeCheck(${kidManage.no},${kidManage.check1})"
+              value="${(kidManage.check1 == 0)?'등원':'하원'}"></td>
+          </c:if>
+          <c:if test="${loginUser.type == 'parent'}">
+            <td>${(kidManage.check1 == 0)?'등원':'하원'}</td>
+          </c:if>
+        </tr>
+      </c:forEach>
+    </table>
 
 		<div id="sForm" class="sForm sFormPadding"
 			style="position: absolute; z-index: 2;">
@@ -141,7 +146,7 @@
 
 					<tr>
 						<td align="center"><br>
-							<button type='submit'>전송</button>
+							<button type='submit'>등록</button>
 						<td>
 					</tr>
 				</table>
@@ -167,24 +172,42 @@
     </footer>
 </body>
 
+
 <script>
-function changeCheck() {
-	  if ()
+function changeCheck(no,status) {
+  if(status == 1) {
+     change = 0;
+  } else {
+    change = 1;
+    }
+  
+  $.ajax( {
+    
+    url : '../kidManage/edit.do',
+    type : 'POST',
+    dataType: 'JSON',
+    data : {
+    no : no,
+    change : change
+    }, success: function(){
+      location.href = "/list.do";
+    }});
+  location.reload();
 }
 </script>
 
 <script>
-	$("#open").click(function() {
-		$("#sForm").toggleClass("open");
-	});
+  $("#open").click(function() {
+    $("#sForm").toggleClass("open");
+  });
 
-	$("#close").click(function() {
-		$("#sForm").toggleClass("open");
-	});
+  $("#close").click(function() {
+    $("#sForm").toggleClass("open");
+  });
 
-	$(".controlTd").click(function() {
-		$(this).children(".settingsIcons").toggleClass("display");
-		$(this).children(".settingsIcon").toggleClass("openIcon");
-	});
+  $(".controlTd").click(function() {
+    $(this).children(".settingsIcons").toggleClass("display");
+    $(this).children(".settingsIcon").toggleClass("openIcon");
+  });
 </script>
 </html>

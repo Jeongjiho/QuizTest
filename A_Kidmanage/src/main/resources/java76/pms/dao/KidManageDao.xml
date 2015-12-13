@@ -5,7 +5,7 @@
 
 <mapper namespace="java76.pms.dao.KidManageDao">
 
-	<select id="selectList" resultType="kidManage" parameterType="map">
+	<select id="selectList" resultType="kidManage" parameterType="String">
 	 select
 		no,
 	  name,
@@ -13,6 +13,7 @@
 	   gender,
 	  check1
 		from kid
+		where cid=#{cid}
 	</select>
 
 	<insert id="insert" parameterType="kidManage">
@@ -30,6 +31,12 @@
 		age=#{age},
 		cid=#{cid},
 		photo=#{photo}
+		where no=#{no}
+	</update>
+	
+	<update id="edit" parameterType="map">
+		update kid set
+		check1=#{change}
 		where no=#{no}
 	</update>
 	

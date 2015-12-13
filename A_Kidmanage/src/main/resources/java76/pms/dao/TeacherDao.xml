@@ -29,7 +29,7 @@
 		cid=#{cid},
 		tel=#{tel},
 		photo=#{photo}
-		where email=#{email} and pwd=sha1(#{pwd})
+		where member_uid=#{member_uid}
 	</update>
 	
 	<select id="getInfo" resultType="teacher" parameterType="int">
