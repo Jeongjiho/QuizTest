@@ -620,10 +620,11 @@ ul#nav ul {
 			</div>
 			<nav>
 				<ul class="sf-menu" id="nav" style="margin-bottom: 5%;">
-					<li class="selected" style="font-size: 12px;"><a href="index.html">공지사항</a></li>
+					<li class="selected" style="font-size: 12px;">
+					<a href="../board/list.do">공지사항</a></li>
 					<li style="font-size: 12px;"><a href="#">우리 아이들</a>
 						<ul>
-							<li style="font-size: 12px;"><a href="portfolio_one.html">나비반</a></li>
+							<li style="font-size: 12px;"><a href="../kidManage/list.do">나비반</a></li>
 							<li style="font-size: 12px;"><a href="portfolio_two.html">호랑이반</a></li>
 							<li style="font-size: 12px;"><a href="portfolio_two.html">남자반</a></li>
 						</ul></li>

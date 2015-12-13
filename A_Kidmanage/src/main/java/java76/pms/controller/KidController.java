@@ -33,6 +33,11 @@ public class KidController {
   }
 
 
+  @RequestMapping("main")
+  public String kidMain1()  {
+    return "kid/KidMain";
+  }
+
   //---------------------------------------------------------
 
 

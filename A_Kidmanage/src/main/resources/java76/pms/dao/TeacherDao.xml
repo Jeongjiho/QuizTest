@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="java76.pms.dao.TeacherDao">
+
+	<select id="selectList" resultType="teacher" parameterType="map">
+	 select
+	  name,
+	  cid,
+	  tel,
+	  photo
+		from teacher
+	</select>
+
+	<insert id="insert" parameterType="member">
+		insert into teacher(member_uid,name,cid,tel,photo)
+		values((select m_uid from member where email=#{email}),#{name},#{cid},#{tel},#{photo})
+	</insert>
+
+	<delete id="delete" parameterType="string">
+		delete from teacher where email=#{email}
+	</delete>
+
+	<update id="update" parameterType="teacher">
+		update teacher set
+		name=#{name},
+		cid=#{cid},
+		tel=#{tel},
+		photo=#{photo}
+		where email=#{email} and pwd=sha1(#{pwd})
+	</update>
+	
+	<select id="getInfo" resultType="teacher" parameterType="int">
+    select 
+    name,
+	cid,
+    tel,
+    photo
+		from teacher
+		where member_uid=#{member_uid}
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="java76.pms.dao.ParentDao">
+
+	<select id="selectList" resultType="parent" parameterType="map">
+	 select
+	  name,
+	  email,
+	  kidClass,
+	  kidName,
+	  tel,
+	  photo
+		from parent
+	</select>
+
+	<insert id="insert" parameterType="member">
+		insert into parent(member_uid,name,kidClass,kidName,tel,photo)
+		values((select m_uid from member where email=#{email}),#{name},#{kidClass},#{kidName},#{tel},#{photo})
+	</insert>
+
+	<delete id="delete" parameterType="string">
+		delete from parent where email=#{email}
+	</delete>
+
+	<update id="update" parameterType="parent">
+		update parent set
+		name=#{name},
+		kidClass=#{kidClass},
+		kidName=#{kidName},
+		tel=#{tel},
+		photo=#{photo}
+		where email=#{email} and pwd=sha1(#{pwd})
+	</update>
+	
+	<select id="getInfo" resultType="parent" parameterType="int">
+    select 
+	    name,
+	    kidClass,
+	    kidName,
+	    tel,
+	    photo
+	from 
+		parent
+	where
+		member_uid=#{member_uid}
+	</select>
+	
+	
+</mapper>

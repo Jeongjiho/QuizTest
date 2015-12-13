@@ -10,11 +10,11 @@
  
 <div class="card2">
 <c:if test="${not empty loginUser}">  
-	<div class="pen-title2" >
-	<h3>${loginUser.id}님이 접속중 입니다.</h3>
-	</div>
-	<div class="footer"><a style="margin-right:10px" href="${pageContext.request.contextPath}/kid/logout.do">로그아웃</a>
-	<a style="margin-right:40px" href="../member/detail.do?id=${loginUser.id}">내정보보기</a></div>
+  <div class="pen-title2" >
+  <h3>${common.name}님이 접속중 입니다.</h3>
+  </div>
+  <div class="footer"><a style="margin-right:10px" href="${pageContext.request.contextPath}/auth/logout.do">로그아웃</a>
+  <a style="margin-right:40px" href="../member/detail.do?email=${loginUser.email}">내정보보기</a></div>
 </c:if>
 
 <c:if test="${empty loginUser}">

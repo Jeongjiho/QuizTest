@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="java76.pms.dao.MemberDao">
+
+	<select id="selectList" resultType="member" parameterType="map">
+	 select
+	  m_uid,
+	  email,
+	  pwd,
+	  type
+		from member
+	</select>
+
+	<insert id="insert" parameterType="member">
+		insert into member(email,pwd,type)
+		values(#{email},sha1(#{pwd}),#{type})
+	</insert>
+
+	<delete id="delete" parameterType="string">
+		delete from member where m_uid=#{m_uid}
+	</delete>
+
+	<update id="update" parameterType="member">
+		update member set
+		email=#{email},
+		pwd=sha1(#{pwd}),
+		type=#{type}
+		where m_uid=#{m_uid}
+	</update>
+	
+	<select id="selectOne" resultType="member" parameterType="string">
+    select
+	  m_uid,
+	  email,
+	  pwd,
+	  type
+		from member
+		where m_uid=#{m_uid}
+	</select>
+	
+	<select id="login" resultType="member" parameterType="map">
+		select
+	  m_uid,
+	  email,
+	  pwd,
+	  type
+		from member
+		where email=#{email} and pwd=sha1(#{pwd})
+	</select>
+	
+</mapper>

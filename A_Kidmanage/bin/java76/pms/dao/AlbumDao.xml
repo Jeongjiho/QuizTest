@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="java76.pms.dao.AlbumDao">
+<resultMap type="album" id="albumMap">
+</resultMap>
+
+	<insert id="insert" parameterType="album">
+		insert into album(content,photo)
+		values(#{content},#{photo})
+	</insert>
+	
+	
+	 <select id="selectList" resultType="album" parameterType="map">
+   select
+    ano,
+    content,
+    photo
+    from album
+  </select>
+  
+  
+  <delete id="delete" parameterType="int">
+    delete from album 
+    where ano=#{ano}
+  </delete>
+	
+</mapper>

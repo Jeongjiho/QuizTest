@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="java76.pms.dao.KidManageDao">
+
+	<select id="selectList" resultType="kidManage" parameterType="map">
+	 select
+		no,
+	  name,
+	  age,
+	   gender,
+	  check1
+		from kid
+	</select>
+
+	<insert id="insert" parameterType="kidManage">
+		insert into kid(name,age,gender,cid,photo)
+		values(#{name},#{age},#{gender},#{cid},#{photo})
+	</insert>
+
+	<delete id="delete" parameterType="int">
+		delete from kid where no=#{no}
+	</delete>
+
+	<update id="update" parameterType="kidManage">
+		update kid set
+		name=#{name},
+		age=#{age},
+		cid=#{cid},
+		photo=#{photo}
+		where no=#{no}
+	</update>
+	
+	<select id="selectOne" resultType="kidManage" parameterType="int">
+    select
+		no,
+	  name,
+	  age,
+	  gender,
+	  cid,
+	  photo
+		from kid
+		where no=#{no}
+	</select>
+	
+</mapper>

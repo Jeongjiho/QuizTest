@@ -1,3 +1,4 @@
+
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
@@ -63,55 +64,93 @@
 		</header>
 		<!-- end header -->
 
-		<c:if test="${not empty board}">
-			<form id='form1' action='update.do' method='post'
+		<table class="flatTable">
+			<tr class="titleTr">
+				<td class="titleTd"></td>
+				<td colspan="3"></td>
+				<td id="open" class="plusTd button"></td>
+			</tr>
+			<tr class="headingTr">
+				<td>이름</td>
+				<td>나이</td>
+				<td>성별</td>
+				<td>출석</td>
+			</tr>
+
+			<c:forEach var="kidManage" items="${kidManages}">
+				<tr>
+					<td><a href='detail.do?no=${kidManage.no}'>${kidManage.name}</a></td>
+					<td>${kidManage.age}</td>
+					<td>${kidManage.gender}</td>
+					<td><input type="button" name="check1" onclick="changeCheck()"
+						value="${(kidManage.check1 == 0)?'등원':'하원'}"></td>
+				</tr>
+			</c:forEach>
+		</table>
+
+		<div id="sForm" class="sForm sFormPadding"
+			style="position: absolute; z-index: 2;">
+			<span class="button close" id="close"><img
+				src="http://i.imgur.com/nnzONel.png" alt="X" class="" /></span>
+			<h2 class="title">새 원아 등록</h2>
+
+			<form action="../kidManage/add.do" method="post"
 				enctype="multipart/form-data">
-				<table class="flatTable">
-					<tr class="headingTr">
-						<th>번호</th>
-						<td class="titleTd"><input type='text' value='${board.no}'
-							name='no' readonly></td>
-					</tr>
-					<tr class="headingTr">
-						<th>제목</th>
-						<td class="titleTd"><input type='text' value='${board.title}'
-							name='title'></td>
-					</tr>
-					<tr class="headingTr">
-						<th>작성자</th>
-						<td class="titleTd">${board.writer}</td>
-					</tr>
-					<tr class="headingTr">
-						<th>내용</th>
-						<td><textarea rows='10' cols='60' name='content'>${board.content}</textarea></td>
-					</tr>
+				<table>
 					<tr>
-						<th>등록일</th>
-						<td>${board.createdDate}</td>
+						<th>이름</th>
+						<td><input type="text" id="Name" name="name"
+							required="required" /></td>
 					</tr>
+
 					<tr>
-						<th>암호</th>
-						<td><input id='inputPassword' type='password' name='pwd'></td>
+						<th>나이</th>
+						<td><input type="text" id="Age" name="age"
+							required="required" /></td>
 					</tr>
+
 					<tr>
-						<th>파일</th>
-						<td><a href='../attachfile/${board.attachFile}'>${board.attachFile}</a><br>
-							<input type='file' name='file'> <input type='hidden'
-							name='attachFile' value='${board.attachFile}'></td>
+						<th>성별</th>
+						<td><select name="gender">
+								<option value="">선택</option>
+								<option value="남자">남자</option>
+								<option value="여자">여자</option>
+						</select></td>
+					</tr>
+
+					<tr>
+						<th>반</th>
+						<td><select name="cid">
+								<option value="">반 선택</option>
+								<option value="c1">나비반</option>
+								<option value="c2">호랑이반</option>
+								<option value="c3">남자반</option>
+						</select></td>
+					</tr>
+
+					<tr>
+						<th>사진</th>
+						<td><input type='file' name='photofile'></td>
+					</tr>
+
+					<tr>
+						<td align="center"><br>
+							<button type='submit'>전송</button>
+						<td>
 					</tr>
 				</table>
-				<p>
-					<button name='update' type='submit' class='button1'>변경</button>
-					<a id='aDelete' href='delete.do?no=${board.no}' class='button2'
-						onclick='deleteBoard()'>삭제</a>
-				</p>
 			</form>
-		</c:if>
-		<c:if test="${empty board}">
-			<p>해당 번호의 게시물을 찾을 수 없습니다.</p>
-		</c:if>
+		</div>
+
+
 	</div>
 </body>
+
+<script>
+function changeCheck() {
+	  if ()
+}
+</script>
 
 <script>
 	$("#open").click(function() {
@@ -127,13 +166,4 @@
 		$(this).children(".settingsIcon").toggleClass("openIcon");
 	});
 </script>
-
-<script>
-    function deleteBoard() {
-      var password = document.getElementById('inputPassword').value;
-      var href = document.getElementById('aDelete').href + "&password="
-          + password;
-      document.getElementById('aDelete').href = href;
-    }
-  </script>
 </html>

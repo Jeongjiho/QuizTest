@@ -63,46 +63,51 @@
 		</header>
 		<!-- end header -->
 
-		<c:if test="${not empty board}">
+		<c:if test="${not empty kidManage}">
 			<form id='form1' action='update.do' method='post'
 				enctype="multipart/form-data">
 				<table class="flatTable">
+
 					<tr class="headingTr">
-						<th>번호</th>
-						<td class="titleTd"><input type='text' value='${board.no}'
-							name='no' readonly></td>
+						<th>이름</th>
+						<td class="titleTd"><input type='text'
+							value='${kidManage.name}' name='name'> <input
+							type="hidden" name="no" value="${kidManage.no}"></td>
 					</tr>
+
 					<tr class="headingTr">
-						<th>제목</th>
-						<td class="titleTd"><input type='text' value='${board.title}'
-							name='title'></td>
+						<th>나이</th>
+						<td class="titleTd"><input type='text'
+							value='${kidManage.age}' name='age'></td>
 					</tr>
+					
 					<tr class="headingTr">
-						<th>작성자</th>
-						<td class="titleTd">${board.writer}</td>
-					</tr>
-					<tr class="headingTr">
-						<th>내용</th>
-						<td><textarea rows='10' cols='60' name='content'>${board.content}</textarea></td>
-					</tr>
+            <th>성별</th>
+            <td class="titleTd">${kidManage.gender}</td>
+          </tr>
+          
+          
 					<tr>
-						<th>등록일</th>
-						<td>${board.createdDate}</td>
-					</tr>
-					<tr>
-						<th>암호</th>
-						<td><input id='inputPassword' type='password' name='pwd'></td>
-					</tr>
-					<tr>
-						<th>파일</th>
-						<td><a href='../attachfile/${board.attachFile}'>${board.attachFile}</a><br>
-							<input type='file' name='file'> <input type='hidden'
-							name='attachFile' value='${board.attachFile}'></td>
+            <th>반</th>
+            <td><select name="cid">
+                <option value="">반 선택</option>
+                <option value="c1">나비반</option>
+                <option value="c2">호랑이반</option>
+                <option value="c3">남자반</option>
+            </select></td>
+          </tr>
+					
+					<tr class="headingTr">
+						<th>사진</th>
+						<td><img width='130' height='130'
+							src='../file/${(empty kidManage.photo)?"anonymous.png":kidManage.photo}'><br>
+							<input type='file' name='photofile'> <input type='hidden'
+							name='photo' value='${kidManage.photo}'></td>
 					</tr>
 				</table>
 				<p>
 					<button name='update' type='submit' class='button1'>변경</button>
-					<a id='aDelete' href='delete.do?no=${board.no}' class='button2'
+					<a id='aDelete' href='delete.do?no=${kidManage.no}' class='button2'
 						onclick='deleteBoard()'>삭제</a>
 				</p>
 			</form>
