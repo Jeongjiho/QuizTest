@@ -11,7 +11,7 @@ public interface TeacherDao {
 
   int insert(Member member);
 
-  int delete(String email);
+  int delete(int member_uid);
 
   int update(Teacher teacher);
 

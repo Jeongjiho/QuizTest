@@ -31,9 +31,10 @@
 <meta charset='UTF-8'>
 <title></title>
 </head>
-  <div align="right" style="font-size: 12px; margin-right:15%; margin-top:5%">
-<jsp:include page="/Header.jsp" />
-</div> 
+<div align="right"
+	style="font-size: 12px; margin-right: 15%; margin-top: 5%">
+	<jsp:include page="/Header.jsp" />
+</div>
 <body>
 	<div id="main">
 		<!-- begin header -->
@@ -75,27 +76,26 @@
 
 					<tr class="headingTr">
 						<th>이름</th>
-						<td class="titleTd"><input type='text' value='${teacher.name}'
-							name='name'> <input type="hidden" name="member_uid"
-							value='${loginUser.m_uid}'></td>
+						<td class="titleTd"><input type='text'
+							value='${teacher.name}' name='name'> <input type="hidden"
+							name="member_uid" value='${loginUser.m_uid}'></td>
 					</tr>
 
-          <tr class="headingTr">
-            <th>담당 반</th>
-            <td class="titleTd">
-            <select name="cid">
-                <option value="">반 선택</option>
-                <option value="나비반">나비반</option>
-                <option value="호랑이반">호랑이반</option>
-                <option value="남자반">남자반</option>
-            </select></td>
-          </tr>
+					<tr class="headingTr">
+						<th>담당 반</th>
+						<td class="titleTd"><select name="cid">
+								<option value="">반 선택</option>
+								<option value="나비반">나비반</option>
+								<option value="호랑이반">호랑이반</option>
+								<option value="남자반">남자반</option>
+						</select></td>
+					</tr>
 
 					<tr class="headingTr">
 						<th>전화번호</th>
-            <td class="titleTd"><input type='text'
-              value='${teacher.tel}' name='tel'></td>					
-          </tr>
+						<td class="titleTd"><input type='text' value='${teacher.tel}'
+							name='tel'></td>
+					</tr>
 
 					<tr class="headingTr">
 						<th>사진</th>
@@ -108,6 +108,8 @@
 				<br>
 				<p style="margin-left: 100px;">
 					<a style="margin-left: 30px; font-size: medium;" onclick="Update()">변경</a>
+					<a style="margin-left: 30px; font-size: medium;" id='aDelete'
+						href='teacherDelete.do?member_uid=${loginUser.m_uid}'>삭제</a>
 				</p>
 			</form>
 		</c:if>
@@ -133,9 +135,8 @@
 </script>
 
 <script>
-    
-    function Update() {
-        $("#form1").submit();
-      }
-  </script>
+	function Update() {
+		$("#form1").submit();
+	}
+</script>
 </html>

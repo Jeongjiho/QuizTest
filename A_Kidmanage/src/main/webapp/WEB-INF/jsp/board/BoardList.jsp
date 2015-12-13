@@ -67,7 +67,7 @@
 						</ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
-							<li><a href="gallery.do">나비반</a></li>
+							<li><a href="../kid/gallery1.do">나비반</a></li>
 							<li><a href="portfolio_two.html">호랑이반</a></li>
 							<li><a href="portfolio_two.html">남자반</a></li>
 						</ul></li>
@@ -143,7 +143,7 @@
 
 					<tr>
 						<td align="center"><br>
-							<button type='submit'>등록</button>
+							<button class="" type='submit'>등록</button>
 						<td>
 					</tr>
 				</table>

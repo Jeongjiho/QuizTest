@@ -167,6 +167,14 @@ public class JoinController {
   }
   //---------------------------------------------------------
 
+  @RequestMapping("teacherDelete")
+  public String teacherDelete(int member_uid, Model model) throws Exception {
+    if (teacherDao.delete(member_uid) <= 0) {
+      model.addAttribute("errorCode", "401");
+      return "/teacher/MemberAuthError";
+    } 
+    return "redirect:../kid/login.do";
+  }
 
   @RequestMapping(value="login", method=RequestMethod.POST)
   public String login(

@@ -19,8 +19,8 @@
 		values((select m_uid from member where email=#{email}),#{name},#{cid},#{tel},#{photo})
 	</insert>
 
-	<delete id="delete" parameterType="string">
-		delete from teacher where email=#{email}
+	<delete id="delete" parameterType="int">
+		delete from teacher where member_uid=#{member_uid}
 	</delete>
 
 	<update id="update" parameterType="teacher">

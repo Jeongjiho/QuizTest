@@ -702,7 +702,7 @@ ul#nav ul {
 			<div class="form-group">
 				<label class="sr-only" for="exampleInputEmail3"> Email
 					address</label> <input type="email" class="form-control" name="email"
-					id="exampleInputEmail3" value="${cookie.email.value}"
+					id="exampleInputEmail3" value='${cookie.email.value}'
 					placeholder="Email">
 			</div>
 			<div class="form-group">
