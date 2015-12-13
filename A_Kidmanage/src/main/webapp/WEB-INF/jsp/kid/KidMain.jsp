@@ -629,9 +629,9 @@ ul#nav ul {
 						</ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
-							<li><a href="gallery1.do">나비반</a></li>
-							<li><a href="gallery2.do">호랑이반</a></li>
-							<li><a href="gallery3.do">남자반</a></li>
+							<li><a href="gallery1.do" enctype="multipart/form-data">나비반</a></li>
+							<li><a href="gallery2.do" enctype="multipart/form-data">호랑이반</a></li>
+							<li><a href="gallery3.do" enctype="multipart/form-data">남자반</a></li>
 						</ul></li>
 					<li style="font-size: 12px;"><a href="blog.html">식단표</a></li>
 				</ul>
@@ -642,10 +642,11 @@ ul#nav ul {
 
 		<!-- begin footer -->
 		<footer>
-			<p style="font-size: 15px;">
-				Copyright &copy; 2015 다인이유치원. All Rights Reserved. <a
-					href="http://www.css3templates.co.uk">Design from 갓지현</a>.
-			</p>
+      <p style="font-size: 15px;">
+        Copyright &copy; 2015 다인이유치원. All Rights Reserved. <a
+          href="http://www.css3templates.co.uk">Design from
+          갓지현(feat. 지호)</a>
+      </p>
 			<p>
 				<img src="../images/twitter.png" alt="twitter" />&nbsp;<img
 					src="../images/facebook.png" alt="facebook" />&nbsp;<img

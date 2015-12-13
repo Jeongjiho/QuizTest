@@ -1,10 +1,12 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+  pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML>
 <html>
 
 <head>
-<title>PhotoArtWork</title>
+<title>나비반 앨범</title>
 <meta name="description" content="website description" />
 <meta name="keywords" content="website keywords, website keywords" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -19,9 +21,41 @@
 <!-- modernizr enables HTML5 elements and feature detects -->
 <script type="text/javascript" src="../js/modernizr-1.5.min.js"></script>
 
+<SCRIPT type="text/javascript">
+function f_checked(){
+    if(check1.checked == "true"){ 
+        frm.submit();
+    }
+</SCRIPT>
 
 
+<script>
+function save_it() {
+    var obj = document.frm_data
+    var cnt_checkbox = 0
+    
+     
+          for (var i = 1; i < obj.number.length;i++ )  {
+             if (obj.number[i].checked == true  ) { cnt_checkbox++ }              
+          }
+          
+    if (cnt_checkbox == 0 ) {
+     alert("선택된 데이타가 없습니다.")
+    }
+    else {
+           if   (  confirm( cnt_checkbox + "개의 데이타를 저장 하시겠습니까 ?") ) { 
+            obj.action = "finance_orderInSave.asp";
+      obj.submit();
+           }
+           else { 
+            return false; 
+           }    
+          }     
+   }
 
+</script>
+
+  
 
   <style type="text/css">
   /* Button */
@@ -522,6 +556,7 @@
 </head>
 
 <body>
+
 	<div id="main">
 
 		<!-- begin header -->
@@ -530,6 +565,9 @@
 				style="margin-bottom: 0%; margin-top: 2%; font-size: 11px;">
 				<h1>
 					<a href="login.do">다인이</a>유치원
+				</h1>
+				<h1 style="margin-top: -5%; margin-left: -10%; font-size: 25px;">
+				<a href="gallery1.do">나비</a>반 앨범
 				</h1>
 			</div>
 			<nav>
@@ -544,165 +582,57 @@
 						</ul></li>
 					<li style="font-size: 12px;"><a href="#">앨범</a>
 						<ul>
-							<li><a href="gallery.do">나비반</a></li>
-							<li><a href="portfolio_two.html">호랑이반</a></li>
-							<li><a href="portfolio_two.html">남자반</a></li>
+							<li><a href="gallery1.do">나비반</a></li>
+							<li><a href="gallery2.do">호랑이반</a></li>
+							<li><a href="gallery3.do">남자반</a></li>
 						</ul></li>
 					<li style="font-size: 12px;"><a href="blog.html">식단표</a></li>
 				</ul>
 			</nav>
 		</header>
 		<!-- end header -->
-
-		<!-- begin content -->
-		<div id="site_content">
-			<!-- start gallery HTML containers -->
-			<div class="navigation-container">
-				<div id="thumbs" class="navigation">
-					<a class="pageLink prev" style="visibility: hidden;" href="#"
-						title="Previous Page"></a>
-					<ul class="thumbs noscript">
-						<li><a class="thumb" href="../images/portfolio_two/1.jpg"><img
-								src="../images/portfolio_two/1_thumb.jpg" alt="one" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Pier by the
-									sea, Fowey, Cornwall, UK&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/2.jpg"><img
-								src="../images/portfolio_two/2_thumb.jpg" alt="two" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Cheeky monkey
-									and his friend - wooden rabbit&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/3.jpg"><img
-								src="../images/portfolio_two/3_thumb.jpg" alt="three" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Number 7
-									derailment - playroom style&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/4.jpg"><img
-								src="../images/portfolio_two/4_thumb.jpg" alt="four" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;A beautiful
-									rose looking for the sunlight&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/5.jpg"><img
-								src="../images/portfolio_two/5_thumb.jpg" alt="five" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Waves and
-									Rocks (Croyde, Devon, UK)&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/6.jpg"><img
-								src="../images/portfolio_two/6_thumb.jpg" alt="six" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;A vase of
-									black and white tulips&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/7.jpg"><img
-								src="../images/portfolio_two/7_thumb.jpg" alt="seven" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Abstract
-									angles, dark and light&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/8.jpg"><img
-								src="../images/portfolio_two/8_thumb.jpg" alt="eight" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;A snowy house
-									in winter (December, 2009)&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/9.jpg"><img
-								src="../images/portfolio_two/9_thumb.jpg" alt="nine" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;One, two,
-									three daisies in the grass&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/10.jpg"><img
-								src="../images/portfolio_two/10_thumb.jpg" alt="ten" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;A small boat
-									on the big ocean (Croyde, Devon, UK)&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/2.jpg"><img
-								src="../images/portfolio_two/2_thumb.jpg" alt="two" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Cheeky monkey
-									and his friend - wooden rabbit&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/4.jpg"><img
-								src="../images/portfolio_two/4_thumb.jpg" alt="four" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;A beautiful
-									rose looking for the sunlight&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/6.jpg"><img
-								src="../images/portfolio_two/6_thumb.jpg" alt="six" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;A vase of
-									black and white tulips&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/8.jpg"><img
-								src="../images/portfolio_two/8_thumb.jpg" alt="eight" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;A snowy house
-									in winter (December, 2009)&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/10.jpg"><img
-								src="../images/portfolio_two/10_thumb.jpg" alt="ten" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;A small boat
-									on the big ocean (Croyde, Devon, UK)&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/1.jpg"><img
-								src="../images/portfolio_two/1_thumb.jpg" alt="one" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Pier by the
-									sea, Fowey, Cornwall, UK&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/3.jpg"><img
-								src="../images/portfolio_two/3_thumb.jpg" alt="three" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Number 7
-									derailment - playroom style&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/5.jpg"><img
-								src="../images/portfolio_two/5_thumb.jpg" alt="five" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Waves and
-									Rocks (Croyde, Devon, UK)&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/7.jpg"><img
-								src="../images/portfolio_two/7_thumb.jpg" alt="seven" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;Abstract
-									angles, dark and light&quot;</div>
-							</div></li>
-						<li><a class="thumb" href="../images/portfolio_two/9.jpg"><img
-								src="../images/portfolio_two/9_thumb.jpg" alt="nine" /></a>
-							<div class="caption">
-								<div class="image-title portfolio_two">&quot;One, two,
-									three daisies in the grass&quot;</div>
-							</div></li>
-					</ul>
-					<a class="pageLink next" style="visibility: hidden;" href="#"
-						title="Next Page"></a>
-				</div>
-			</div>
-			<div class="content">
-				<div class="slideshow-container">
-					<div id="loading" class="loader"></div>
-					<div id="slideshow" class="slideshow"></div>
-					<div id="controls" class="controls portfolio_two"></div>
-					<div id="caption" class="caption-container"></div>
-				</div>
-			</div>
-			<!-- end gallery HTML containers -->
-		</div>
+    <!-- begin content -->
+    <div id="site_content" style="margin-top: 10%; background-image: url(../images/light.png);">
+      <!-- start gallery HTML containers -->
+      <div class="navigation-container" >
+        <div id="thumbs" class="navigation" >
+          <a class="pageLink prev" style="visibility: hidden;" href="#"
+            title="Previous Page" ></a>
+          <ul class="thumbs noscript" >
+          <c:forEach var="album" items="${albums}">
+            <li><a class="thumb" href="../file/s-${album.photo}" onclick="">
+            <img src="../file/${album.photo}" alt="one" style="width: 75px; height: 75px;"/></a>
+            <input type="checkbox" name="frm_data" id="frm_data" value="${album.ano}" style="margin-left: 43%;"/>
+              <div class="caption">
+                <div class="image-title portfolio_two">&quot;${album.content}&quot;</div>
+              </div></li></c:forEach>
+          </ul>
+					 
+          <a class="pageLink next" style="visibility: hidden;" href="#"
+            title="Next Page" ></a>
+        </div>
+      </div>
+      <div class="content" >
+        <div class="slideshow-container" style="margin-left: 14%; width: 950px; ">
+          <div id="loading" class="loader" ></div>
+          <div id="slideshow" class="slideshow" ></div>
+          <div id="controls" class="controls portfolio_two" style="width: 71.2%;"></div>
+          <div id="caption" class="caption-container" style="background-color: red;"></div>
+        </div>
+      </div>
+      <!-- end gallery HTML containers -->
+    </div>
+		
 		<p></p>
 		<div style="margin-left: 76%; margin-top:-1%;">
-			<input type="submit" class="special" value="Submit" />
-		<!-- </div>
-		<div style="margin-top: -5%; margin-left:85%;">-->
-			<input type="reset" class="alt" value="Reset" />
+		<!-- 새로 추가하기 액션 -->
+		<form action="albumadd.do" method="get" enctype="multipart/form-data" style="margin-left: -60%;">
+			<input type="submit" class="special" value="새로 추가하기" /></form>
+			
+		<!-- 수정하기 액션 -->	 
+			<form action="delete.do" style="margin-left: -10%; margin-top: -13%;" method="POst" enctype="multipart/form-data">
+			<input type="button" id="save_it" value="삭제하기" onclick="save_it()" /></form>
+			
 		</div>
 		<!-- end content -->
 
@@ -715,6 +645,8 @@
 			</p>
 		</footer>
 		<!-- end footer -->
+		           
+		
 
 	</div>
 	<!-- javascript at the bottom for fast page loading -->
