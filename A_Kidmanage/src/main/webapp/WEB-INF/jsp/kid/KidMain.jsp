@@ -57,6 +57,7 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
+
 <style type="text/css">
 /* light theme */
 body {
@@ -691,10 +692,10 @@ ul#nav ul {
       <hr width="90%" color="black" size="20" noshade="noshade">
       
       <c:forEach var="album" items="${albums}">
-            <img src="../file/${album.photo}" style="width: 150px; height: 150px; margin-left: 5%;"/>
+            <img name="j_test" src="../file/${album.photo}" style="width: 150px; height: 150px; margin-left: 5%;"/>
       </c:forEach>
      
-     
+      
      <br><br><br>
      
      <div style="border-top: 2px solid gray;"></div>
@@ -730,5 +731,30 @@ ul#nav ul {
 	</script>
 
 
+<style type="text/css">
+    .css_test {
+        text-align : center;
+    }
+    .css_test img {
+        border-radius : 0;
+        margin-bottom : 10px;
+    }
+</style>
+
+<script type="text/javascript">
+    function j_test_mover(o){
+        $(o).stop().animate({'border-radius':120}, 1000, 'easeOutElastic');
+    }
+
+    function j_test_mout(o){
+        $(o).stop().animate({'border-radius':1});
+    }
+
+    $('[name=j_test]').bind('mouseover', function(){
+        j_test_mover(this);
+    }).bind('mouseout', function(){
+        j_test_mout(this);
+    });
+</script>
 </body>
 </html>
